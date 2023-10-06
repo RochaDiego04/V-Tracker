@@ -5,16 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NewsComponent } from './components/news/news.component';
+import { EsportsComponent } from './components/esports/esports.component';
+import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { GeneralInformationComponent } from './components/general-information/general-information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NewsComponent,
+    EsportsComponent,
+    HomeComponent,
+    GeneralInformationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterOutlet
   ],
   providers: [],
   bootstrap: [AppComponent]
