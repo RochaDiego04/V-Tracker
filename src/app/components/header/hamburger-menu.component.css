@@ -92,7 +92,8 @@
 @media (min-width: 40em) {
   .navbar__list {
     flex-direction: row;
-    gap: 10px;
+    gap: 15px;
+    padding-left: 0;
   }
 }
 
@@ -108,7 +109,7 @@
 
 .navbar__list a {
   text-decoration: none;
-  color: var(--dark-text1);
+  color: var(--dark-text2);
   font-weight: 700;
 }
 
@@ -127,7 +128,7 @@
     height: 4px;
     background-color: var(--details-color);
     position: absolute;
-    bottom: -39px;
+    bottom: -35px;
     left: 50%;
     transform: translate(-50%, 0);
   }

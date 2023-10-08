@@ -30,7 +30,7 @@
 @media (min-width: 40em) {
     .header__left {
         flex-direction: row-reverse; /*Show Logo before Navbar*/
-        gap: 35px;
+        gap: 30px;
     }
 }
 
