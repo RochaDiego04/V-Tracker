@@ -10,6 +10,7 @@ import { EsportsComponent } from './components/esports/esports.component';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { GeneralInformationComponent } from './components/general-information/general-information.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GeneralInformationComponent } from './components/general-information/ge
     NewsComponent,
     EsportsComponent,
     HomeComponent,
-    GeneralInformationComponent
+    GeneralInformationComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

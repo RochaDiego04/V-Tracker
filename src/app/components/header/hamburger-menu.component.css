@@ -1,0 +1,139 @@
+/* .hamburger-menu */
+
+.hamburger-menu .menu-icon {
+  max-width: 100%;
+}
+
+.hamburger-menu__open,
+.hamburger-menu__close {
+  display: block;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (min-width: 40em) {
+  .hamburger-menu__open,
+  .hamburger-menu__close {
+    display: none;
+  }
+}
+
+.hamburger-menu__close {
+  position: relative;
+  width: 25px;
+  height: 40px;
+}
+
+.hamburger-menu__close--img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.hamburger-menu__close:hover,
+.hamburger-menu__open:hover{ /* Svg buttons hover white */
+  filter: invert(.5) brightness(2.5) saturate(100%) hue-rotate(0deg); 
+  cursor: pointer;
+}
+
+/* .navbar */
+
+.navbar {
+  /* Menu starts hidden */
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (min-width: 40em) {
+  /* Show navbar row for desktop */
+  .navbar {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 39.9475em) {
+  /*  Show navbar column for mobile */
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    background-color: var(--dark-top-bg);
+    padding: 22px 22px;
+    width: 67%;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  }
+}
+
+.navbar.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar__list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 40px;
+}
+
+@media (min-width: 40em) {
+  .navbar__list {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+.navbar__list li {
+  padding: 11.5px 0;
+}
+
+@media (min-width: 40em) {
+  .navbar__list li {
+    padding: 0;
+  }
+}
+
+.navbar__list a {
+  text-decoration: none;
+  color: var(--dark-text1);
+  font-weight: 700;
+}
+
+@media (min-width: 40em) {
+  .navbar__list a {
+    color: var(--dark-text1);
+    font-weight: 400;
+    
+    /* Hovered bottom borders */
+    position: relative;
+  }
+  .navbar__list a:hover::after { /* Hovered bottom borders */
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--details-color);
+    position: absolute;
+    bottom: -39px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+.navbar__list a:hover {
+  color: var(--white);
+}

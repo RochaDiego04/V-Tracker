@@ -1,3 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /*  COLOR DEFINITION */
+  --primary-color: rgb(194, 4, 4);
+  --secondary-color: hsl(343, 94%, 31%);
+  --details-color: hsl(36, 98%, 49%);
+  --dark-primary-color: hsl(342, 94%, 19%);
+  --dark-bg-details: hsl(332, 89%, 14%);
+  --white: hsl(0, 0%, 100%);
 
+  /*  DARK BG COLOR THEME */
+  --dark-top-bg: hsl(226, 18%, 14%);
+  --dark-bg: hsl(231, 16%, 16%);
+  --dark-card: hsl(228, 32%, 19%);
+  --dark-card-hover: hsl(228, 25%, 27%);
+  --dark-text1: hsl(0, 0%, 77%);
+  --dark-text2: hsl(0, 0%, 61%);
+  --dark-mobile-bar: hsl(237, 18%, 24%);
+  
+  --font-Montserrat: 'Montserrat', sans-serif;
+}
 
+/* BREAKPOINTS DECLARATION
+    --breakpoint-medium: 40em;
+    --breakpoint-large: 71.875em;
+    --breakpoint-xlarge: 87.5em;
+    --breakpoint-down-small: 39.9475em;
+    --breakpoint-down-large: 71.8125em;
+    --breakpoint-down-xlarge: 87.4375em;
+*/
+
+html {
+  /*font-size: 62.5%; /*1 rem = 10px*/
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-Montserrat);
+  background-color: var(--dark-bg);
+  color: var(--dark-text2);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
