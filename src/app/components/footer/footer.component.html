@@ -10,8 +10,8 @@
     </div>
 
     <div class="container__column">
-        <h4 class="column__heading">Company</h4>
-        <ul class="column__list">
+        <h4 class="column__heading" (click)="toggleCompanyList()">Company</h4>
+        <ul class="column__list" *ngIf="isCompanyExpanded">
             <li class="column__list--item"><a href="#">Partnerships</a></li>
             <li class="column__list--item"><a href="#">Employment</a></li>
             <li class="column__list--item"><a href="#">Brand</a></li>
@@ -20,8 +20,8 @@
     </div>
 
     <div class="container__column">
-        <h4 class="column__heading">Socials</h4>
-        <ul class="column__list">
+        <h4 class="column__heading" (click)="toggleSocialsList()">Socials</h4>
+        <ul class="column__list" *ngIf="isSocialsExpanded">
             <li class="column__list--item"><a href="#">Facebook</a></li>
             <li class="column__list--item"><a href="#">Twitter</a></li>
             <li class="column__list--item"><a href="#">Instagram</a></li>
@@ -30,8 +30,8 @@
     </div>
 
     <div class="container__column">
-        <h4 class="column__heading">aaaaaaaaa</h4>
-        <ul class="column__list">
+        <h4 class="column__heading" (click)="toggleOtherList()">aaaaaaaaa</h4>
+        <ul class="column__list" *ngIf="isOtherExpanded">
             <li class="column__list--item"><a href="#">bbbbb</a></li>
             <li class="column__list--item"><a href="#">bbbbb</a></li>
             <li class="column__list--item"><a href="#">bbbbb</a></li>
@@ -41,11 +41,11 @@
   </div>
 
   <div class="footer__copyright">
-    <h5>Copyright © 2023 Valorant Tracker. All rights reserved.</h5>
+    <h5>Copyright © 2023 V-Tracker. All rights reserved.</h5>
     <p>
-      Valorant Tracker isn't endorsed by Riot Games and doesn't reflect the
+      V-Tracker isn't endorsed by Riot Games and doesn't reflect the
       views or opinions of Riot Games or anyone officially involved in producing
-      or managing Valorant Tracker. Valorant and Riot Games are trademarks or
+      or managing V-Tracker. Valorant and Riot Games are trademarks or
       registered trademarks of Riot Games, Inc. Valorant © Riot Games, Inc.
     </p>
   </div>

@@ -104,6 +104,7 @@
 @media (min-width: 40em) {
   .navbar__list li {
     padding: 0;
+    text-align: center;
   }
 }
 
