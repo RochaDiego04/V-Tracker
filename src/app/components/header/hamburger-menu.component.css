@@ -22,8 +22,8 @@
 
 .hamburger-menu__close {
   position: relative;
-  width: 25px;
-  height: 40px;
+  width: 2.5rem;
+  height: 4rem;
 }
 
 .hamburger-menu__close--img {
@@ -63,7 +63,7 @@
   .navbar {
     display: flex;
     flex-direction: column;
-    gap: 38px;
+    gap: 3.8rem;
 
     position: absolute;
     top: 0;
@@ -71,7 +71,7 @@
     bottom: 0;
 
     background-color: var(--dark-top-bg);
-    padding: 22px 22px;
+    padding: 2.2rem 2.2rem;
     width: 67%;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
   }
@@ -86,19 +86,19 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  gap: 40px;
+  gap: 4rem;
 }
 
 @media (min-width: 40em) {
   .navbar__list {
     flex-direction: row;
-    gap: 15px;
+    gap: 1.5rem;
     padding-left: 0;
   }
 }
 
 .navbar__list li {
-  padding: 11.5px 0;
+  padding: 1.15rem 0;
 }
 
 @media (min-width: 40em) {
@@ -112,12 +112,14 @@
   text-decoration: none;
   color: var(--dark-text2);
   font-weight: 700;
+  font-size: 1.8rem;
 }
 
 @media (min-width: 40em) {
   .navbar__list a {
     color: var(--dark-text1);
     font-weight: 400;
+    font-size: 1.4rem;
     
     /* Hovered bottom borders */
     position: relative;
@@ -126,10 +128,10 @@
     content: "";
     display: block;
     width: 100%;
-    height: 4px;
+    height: 0.4rem;
     background-color: var(--details-color);
     position: absolute;
-    bottom: -35px;
+    bottom: -3.5rem;
     left: 50%;
     transform: translate(-50%, 0);
   }

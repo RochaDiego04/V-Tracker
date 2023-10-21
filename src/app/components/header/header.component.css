@@ -5,18 +5,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 84px;
+    height: 8.4rem;
 }
 
 @media (min-width: 40em) {
     .header .container {
-        padding: 20px 20px 20px 20px;
+        padding: 2rem 2rem 2rem 2rem;
     }
 }
 
 @media (min-width: 40em) { /* separation between screen borders and bottom line of the header */
     .container .header__line {
-        margin: 0 20px;
+        margin: 0 2rem;
     }
 }
 
@@ -24,13 +24,13 @@
 .header__left {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 1.8rem;
 }
 
 @media (min-width: 40em) {
     .header__left {
         flex-direction: row-reverse; /*Show Logo before Navbar*/
-        gap: 30px;
+        gap: 3rem;
     }
 }
 
@@ -39,19 +39,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 2rem;
 }
 
 @media (min-width: 40em) {
     .header__right {
-        gap: 33px;
+        gap: 3.3rem;
     }
 }
 
 /* .header__right--avatar */
 .header__right--avatar {
-    max-width: 24px;
-    margin: 6px;
+    max-width: 2.4rem;
+    margin: 0.6rem;
     vertical-align: middle;
     border-radius: 50%;
     transition: box-shadow 0.3s;
@@ -65,7 +65,7 @@
 
 @media (min-width: 40em) {
     .header__right--avatar {
-        max-width: 35px;
+        max-width: 3.5rem;
         margin: 0;
     }
 }
