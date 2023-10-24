@@ -24,39 +24,41 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { connectAuthEmulator } from 'firebase/auth';
 import { connectFirestoreEmulator } from 'firebase/firestore';
+import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    NewsComponent,
-    EsportsComponent,
-    HomeComponent,
-    GeneralInformationComponent,
-    AboutUsComponent,
-    LogInComponent,
-    SignUpComponent,
-    EmailVerificationComponent,
-    ForgotPasswordComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterOutlet,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => {
-      const auth = getAuth();
-      connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true })
-      return auth;
-    }),
-    provideFirestore(() =>{ 
-      const firestore = getFirestore();
-      connectFirestoreEmulator(firestore, 'http://localhost', 9098);
-      return firestore;
-    }),
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        NewsComponent,
+        EsportsComponent,
+        HomeComponent,
+        GeneralInformationComponent,
+        AboutUsComponent,
+        LogInComponent,
+        SignUpComponent,
+        EmailVerificationComponent,
+        ForgotPasswordComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterOutlet,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAuth(() => {
+            const auth = getAuth();
+            connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
+            return auth;
+        }),
+        provideFirestore(() => {
+            const firestore = getFirestore();
+            connectFirestoreEmulator(firestore, 'http://localhost', 9098);
+            return firestore;
+        }),
+        AuthFormComponent
+    ]
 })
 export class AppModule { }

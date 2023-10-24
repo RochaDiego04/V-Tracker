@@ -1,0 +1,126 @@
+
+.form {
+    background-color: var(--black);
+  }
+
+  /* LOGO */
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.4rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--white); 
+    text-decoration: none;
+  }
+  
+  .logo__img {
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-right: 0.8rem;
+  }
+  
+  /* FORM CONTAINER */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.2rem 2.9rem;
+    margin: 0 auto;
+  }
+  
+  .container__form {
+    background-color: var(--form-bg-blue); 
+    border-radius: 0.85rem;
+    /*box-shadow: 0 1.2rem 1.85rem rgba(0, 0, 0, 0.938);*/
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.938);
+    border: 1px solid var(--form-borders);
+    max-width: 80rem; 
+    padding: 2.8rem;
+    width: 100%;
+  }
+
+  @media (min-width: 40em) {
+    .container__form {
+      width: 60rem;
+    }
+  }
+  
+  .container__form--title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: var(--white);
+  }
+  
+  .form__labelEmail,
+  .form__labelPassword {
+    display: block;
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: var(--white); 
+    margin-bottom: 0.5rem;
+  }
+
+  .form__inputEmail,
+  .form__inputPassword {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid var(--form-borders);
+    border-radius: 0.7rem;
+    font-size: 1.6rem;
+    margin-bottom: 2.3rem;
+    background-color: #e8f0fe;
+    color: var(--black);
+  }
+
+  .form__inputEmail:focus,
+  .form__inputPassword:focus {
+    outline: 2px solid var(--form-focused);
+  }
+  
+  /* FORM FOOTER */
+  .form__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.6rem;
+    gap: 9rem;
+  }
+  
+  .form__footer--forgotPassword {
+    font-size: 1.4rem;
+    color: var(--details-color); 
+    text-decoration: none;
+  }
+  
+  .form__btnSubmit {
+    width: 100%;
+    padding: 1.2rem 1.8rem;
+    background-color: var(--details-color);
+    color: #fff; 
+    font-weight: 600;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .form__btnSubmit:focus {
+    outline: 2px solid var(--form-focused);
+  }
+
+  .form__signUpAdvertisement {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: hsl(227, 17%, 50%); 
+    margin-top: 1rem;
+  }
+  
+  .form__signUpAdvertisement--link {
+    color: var(--details-color); 
+    text-decoration: none;
+  }
+  

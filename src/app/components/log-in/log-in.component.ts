@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-log-in',
-  templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.css']
+  template: `<app-auth-form [action]="'logIn'" />`,
 })
 export class LogInComponent {
 
