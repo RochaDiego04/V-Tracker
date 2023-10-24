@@ -1,7 +1,7 @@
 <section class="form">
     <div class="container">
         <a class="logo" routerLink="">
-            <img class="logo__img" src="../../../assets/images/ValoranTracker B&N Logo.png" alt="logo">
+            <img class="logo__img" src="/assets/images/ValoranTracker B&N Logo.png" alt="logo">
             V-Tracker   
         </a>
         <div class="container__form">
@@ -12,25 +12,30 @@
                 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
                     <div>
                         <label for="email" class="form__labelEmail">Your email</label>
-                        <input type="email" name="email" id="email" class="form__inputEmail" placeholder="name@company.com" required="">
+                        <input type="email" name="email" id="email" class="form__inputEmail" placeholder="name@company.com" formControlName="email" [ngClass]="{'invalid': hasError('email')}">
                         <!-- Show error message -->
+                        <app-error-message [control]="form.get('email')!" />
                     </div>
                     <div>
                         <label for="password" class="form__labelPassword">Password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••" class="form__inputPassword" required="">
+                        <input type="password" name="password" id="password" placeholder="••••••••" class="form__inputPassword" formControlName="password" [ngClass]="{'invalid': hasError('password')}">
+                        <app-error-message [control]="form.get('password')!" />
                     </div>
                     <div class="form__footer" *ngIf="action === 'logIn'">
                         <a routerLink="/user/forgot-password" class="form__footer--forgotPassword">Forgot password?</a>
                     </div>
                     <button type="submit" [disabled]="!form.valid" class="form__btnSubmit"> {{ title }}</button>
                     <ng-container *ngIf="action === 'logIn'; else templateLogIn">
-                        <p class="form__signUpAdvertisement">
-                            Don’t have an account yet? <a routerLink="/user/sign-up" class="form__signUpAdvertisement--link">Sign up</a>
+                        <p class="form__footerAdvertisement">
+                            Don’t have an account yet? <a routerLink="/user/sign-up" class="form__footerAdvertisement--link">Sign up</a>
                         </p>
                     </ng-container>
                 </form>
                 <div *ngIf="action === 'logIn'">
-                    <button (click)="logInGoogle()">Google login</button>
+                    <button (click)="logInGoogle()" class="form__btnGoogle">
+                        <img class="logo__google" src="/assets/images/icon-google.svg" alt="logo">
+                        Log In with Google
+                    </button>
                 </div>
 
             </div>
@@ -39,5 +44,7 @@
   </section>
 
   <ng-template #templateLogIn>
-        If you already have an account <a routerLink="/user/log-in" class="form__signUpAdvertisement--link">Log In</a>
+    <p class="form__footerAdvertisement">
+        If you already have an account <a routerLink="/user/log-in" class="form__footerAdvertisement--link">Log In</a>
+    </p>
   </ng-template>

@@ -23,9 +23,14 @@
   --form-input: rgba(50, 63, 84, 0.709);
   --form-borders: hsla(0, 10%, 90%, 0.258);
   --form-focused: hsl(36, 75%, 39%);
+  --form-btn-bg: hsl(36, 64%, 54%);
+  --form-btn-hover: hsl(36, 81%, 54%);
 
   --font-Montserrat: 'Montserrat', sans-serif;
   --font-Jost: 'Jost', sans-serif;
+
+  --error: hsl(0, 86%, 40%);
+  --error-input-bg: rgb(238, 220, 220);
 }
 
 /* BREAKPOINTS DECLARATION

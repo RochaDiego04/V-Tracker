@@ -70,9 +70,9 @@
     border: 1px solid var(--form-borders);
     border-radius: 0.7rem;
     font-size: 1.6rem;
-    margin-bottom: 2.3rem;
     background-color: #e8f0fe;
-    color: var(--black);
+    color: #000;
+    font-family: var(--jost);
   }
 
   .form__inputEmail:focus,
@@ -85,12 +85,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.6rem;
+    margin-bottom: 1rem;
     gap: 9rem;
   }
   
   .form__footer--forgotPassword {
     font-size: 1.4rem;
+    margin-bottom: 1rem;
     color: var(--details-color); 
     text-decoration: none;
   }
@@ -98,7 +99,7 @@
   .form__btnSubmit {
     width: 100%;
     padding: 1.2rem 1.8rem;
-    background-color: var(--details-color);
+    background-color: var(--form-btn-bg);
     color: #fff; 
     font-weight: 600;
     border: none;
@@ -108,19 +109,60 @@
     cursor: pointer;
   }
 
+  .form__btnSubmit:hover {
+    background-color: var(--form-btn-hover);
+  }
+
   .form__btnSubmit:focus {
     outline: 2px solid var(--form-focused);
   }
 
-  .form__signUpAdvertisement {
+  .form__footerAdvertisement {
     font-size: 1.4rem;
     font-weight: 400;
     color: hsl(227, 17%, 50%); 
     margin-top: 1rem;
   }
   
-  .form__signUpAdvertisement--link {
+  .form__footerAdvertisement--link {
     color: var(--details-color); 
     text-decoration: none;
   }
+
+  .form__btnGoogle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding: 1.2rem 1.8rem;
+    background-color: transparent;
+    outline: 1px solid var(--form-borders);
+    color: #fff; 
+    font-weight: 600;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .form__btnGoogle:hover {
+    background-color: #aeaeae15;
+  }
+
+  .logo__google {
+    width: 2.7rem;
+    height: 2.7rem;
+    margin-right: 0.8rem;
+  }
   
+  /*INVALID FORMS */
+  .invalid {
+    outline: 2px solid var(--error);
+    background-color: var(--error-input-bg);
+  }
+
+  .invalid::placeholder {
+    color: var(--error);
+  }

@@ -1,0 +1,9 @@
+/* Error message */
+.alert__error {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    color: var(--error);
+    margin: 1rem 1rem 1rem 1rem;
+}

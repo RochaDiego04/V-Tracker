@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ErrorMessageComponent } from "./components/error-message/error-message.component";
 
 const actionType = {
    logIn: {
@@ -17,18 +18,19 @@ const actionType = {
 type ActionType = keyof typeof actionType;
 
 @Component({
-  selector: 'app-auth-form',
-  standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
-  templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.css']
+    selector: 'app-auth-form',
+    standalone: true,
+    templateUrl: './auth-form.component.html',
+    styleUrls: ['./auth-form.component.css'],
+    imports: [CommonModule, RouterModule, ReactiveFormsModule, ErrorMessageComponent]
 })
 export class AuthFormComponent implements OnInit {
   @Input() action!: ActionType;
   form!: FormGroup;
   title!: string;
   
-  private readonly emailPattern = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/
+  private readonly emailPattern: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   
   constructor(private readonly fb: FormBuilder) { //dependency injection
   
