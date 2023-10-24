@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "login-firebase-vtracker"
+  },
+  "targets": {
+    "login-firebase-vtracker": {
+      "hosting": {
+        "v-tracker": [
+          "login-firebase-vtracker"
+        ]
+      }
+    }
+  }
+}

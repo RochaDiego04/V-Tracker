@@ -16,8 +16,16 @@
   --dark-text2: hsl(0, 0%, 61%);
   --dark-text3: hsl(0, 0%, 46%);
   --dark-mobile-bar: hsl(237, 18%, 24%);
-  
+
+  /* FORMS */
+  --form-bg: hsl(205, 28%, 17%);
+  --form-bg-blue: hsl(220, 25%, 9%);
+  --form-input: rgba(50, 63, 84, 0.709);
+  --form-borders: hsla(0, 10%, 90%, 0.258);
+  --form-focused: hsl(36, 75%, 39%);
+
   --font-Montserrat: 'Montserrat', sans-serif;
+  --font-Jost: 'Jost', sans-serif;
 }
 
 /* BREAKPOINTS DECLARATION
