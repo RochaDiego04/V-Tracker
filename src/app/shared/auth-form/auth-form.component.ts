@@ -1,8 +1,10 @@
-import { Component, Input, OnInit, Inject } from '@angular/core';
+import { Component, Input, OnInit, Inject, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorMessageComponent } from "./components/error-message/error-message.component";
+import { AuthService } from 'src/app/services/auth.service';
+import { Observable } from 'rxjs';
 
 const actionType = {
    logIn: {
@@ -28,11 +30,13 @@ export class AuthFormComponent implements OnInit {
   @Input() action!: ActionType;
   form!: FormGroup;
   title!: string;
+
+  user$!: Observable<any>;
   
   private readonly emailPattern: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   
-  constructor(private readonly fb: FormBuilder) { //dependency injection
+  constructor(private readonly fb: FormBuilder, private readonly authSvc: AuthService) { //dependency injection
   
   }
 
@@ -43,6 +47,8 @@ export class AuthFormComponent implements OnInit {
       : actionType.signUp.title
 
     this.initForm();
+
+    this.user$ = this.authSvc.userState$;
   }
 
   onSubmit(): void {
@@ -51,14 +57,13 @@ export class AuthFormComponent implements OnInit {
       ? 'logIn'
       : 'signUp';
   }
-
   hasError(field: string): boolean {
     const fieldName = this.form.get(field);
     return !!fieldName && fieldName.invalid && fieldName.touched;
   }
 
   logInGoogle(): void {
-    // TODO
+    this.authSvc.logInGoogle();
   }
   
   private initForm(): void { // Init reactive form

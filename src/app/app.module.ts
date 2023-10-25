@@ -18,13 +18,14 @@ import { EmailVerificationComponent } from './components/email-verification/emai
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 /* Firebase */
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { connectAuthEmulator } from 'firebase/auth';
+import { GoogleAuthProvider, connectAuthEmulator } from 'firebase/auth';
 import { connectFirestoreEmulator } from 'firebase/firestore';
 import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
+
 
 @NgModule({
     declarations: [
@@ -41,7 +42,7 @@ import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
         EmailVerificationComponent,
         ForgotPasswordComponent
     ],
-    providers: [],
+    providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
@@ -58,7 +59,8 @@ import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
             connectFirestoreEmulator(firestore, 'http://localhost', 9098);
             return firestore;
         }),
-        AuthFormComponent
+        AuthFormComponent,
+        //error solution NullInjectError
     ]
 })
 export class AppModule { }
