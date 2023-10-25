@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   isExcludedRoute(): boolean { // Exclude routes that won't show header and footer
-    const excludedRoutes = ['log-in', 'sign-up', 'email-verification'];
+    const excludedRoutes = ['log-in', 'sign-up', 'email-verification', 'forgot-password'];
     const currentRoute = this.router.url.toLowerCase();
     return excludedRoutes.some(route => currentRoute.includes(route));
   }

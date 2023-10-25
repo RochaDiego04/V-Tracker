@@ -16,6 +16,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { EmailVerificationComponent } from './components/email-verification/email-verification.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ErrorMessageComponent } from './shared/auth-form/components/error-message/error-message.component';
 
 /* Firebase */
 import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -25,6 +26,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { GoogleAuthProvider, connectAuthEmulator } from 'firebase/auth';
 import { connectFirestoreEmulator } from 'firebase/firestore';
 import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -60,7 +62,8 @@ import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
             return firestore;
         }),
         AuthFormComponent,
-        //error solution NullInjectError
+        ReactiveFormsModule,
+        ErrorMessageComponent
     ]
 })
 export class AppModule { }

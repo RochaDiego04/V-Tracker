@@ -1,5 +1,5 @@
 import { Injectable} from '@angular/core';
-import { Auth, GoogleAuthProvider, User, authState, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithRedirect  } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, User, authState, createUserWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithRedirect  } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 
@@ -15,7 +15,9 @@ export class AuthService {
   constructor(
     private readonly auth: Auth,
     private readonly googleProvider: GoogleAuthProvider,
-    private readonly router: Router) {}
+    private readonly router: Router) {
+      // this.signOut();
+    }
 
   get userState$() { //Observable
     return authState(this.auth);
@@ -73,8 +75,16 @@ export class AuthService {
     }
   }
 
+  async sendPasswordResetEmail(email: string):Promise<void>{
+    try {
+      await sendPasswordResetEmail(this.auth, email);
+    } catch (error: unknown) {
+      console.log("Error sending email pw recovery",error);
+    }
+  }
+
   private checkUserIsVerified(user: User): void {
-    const route = user.emailVerified ? '/home' : '/user/email-verification';
+    const route = user.emailVerified ? '/home' : '/user/email-verification';  // Redirect to home or email-verification
     this.router.navigate([route]);
   }
 

@@ -37,7 +37,7 @@ export class AuthFormComponent implements OnInit {
 
   
   constructor(private readonly fb: FormBuilder, private readonly authSvc: AuthService) { //dependency injection
-  
+    
   }
 
   ngOnInit(): void {
