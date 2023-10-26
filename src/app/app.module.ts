@@ -27,6 +27,7 @@ import { GoogleAuthProvider, connectAuthEmulator } from 'firebase/auth';
 import { connectFirestoreEmulator } from 'firebase/firestore';
 import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
 import { ReactiveFormsModule } from '@angular/forms';
+import { LeagueOfLegendsComponent } from './components/league-of-legends/league-of-legends.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         LogInComponent,
         SignUpComponent,
         EmailVerificationComponent,
-        ForgotPasswordComponent
+        ForgotPasswordComponent,
+        LeagueOfLegendsComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],

@@ -10,6 +10,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { EmailVerificationComponent } from './components/email-verification/email-verification.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { authGuard } from './shared/guards/auth.guard';
+import { onlyLoggedInGuard } from './shared/guards/only-logged-in.guard';
 
 
 const routes: Routes = [
@@ -24,7 +25,9 @@ const routes: Routes = [
   {path: 'user/log-in', component: LogInComponent, canActivate: [authGuard]},
   {path: 'user/sign-up', component: SignUpComponent, canActivate: [authGuard]},
   {path: 'user/email-verification', component: EmailVerificationComponent},
-  {path: 'user/forgot-password', component: ForgotPasswordComponent}
+  {path: 'user/forgot-password', component: ForgotPasswordComponent},
+  /* Gaming Paths */
+  {path: 'games/league-of-legends', component: LogInComponent, canActivate: [onlyLoggedInGuard]}
 ];
 
 @NgModule({

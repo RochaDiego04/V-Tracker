@@ -1,1 +1,19 @@
-<p>email-verification works!</p>
+<section>
+    <div class="verification__container">
+      <h1 class="verification__title">
+        Thank you for registering! <br />
+        <span class="verification__container--span">
+          We have sent a confirmation email to <strong> {{user?.email}}</strong>
+        </span>
+      </h1>
+        <p class="verification__instructions">
+          Please check your email and click to the link to verify your email address.
+        </p>
+        <button
+        (click)="onResendEmail()"
+        class="verification__btnResend">
+          Resend
+        </button>
+    </div>
+  
+  </section>
