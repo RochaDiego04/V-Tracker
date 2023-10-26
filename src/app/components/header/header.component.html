@@ -2,47 +2,74 @@
   <div class="container">
     <div class="header__left">
       <div class="hamburger-menu">
-        <button class="hamburger-menu__open" (click)="toggleHamburgerMenu()" id="open">
+        <button
+          class="hamburger-menu__open"
+          (click)="toggleHamburgerMenu()"
+          id="open"
+        >
           <img src="../../../assets/images/icon-menu.svg" alt="menu-icon" />
         </button>
 
-        <nav class="navbar" id="navbar" [ngClass]="{ 'visible': isMenuOpen }"> <!--If menu is open, add class visible-->
+        <nav class="navbar" id="navbar" [ngClass]="{ visible: isMenuOpen }">
+          <!--If menu is open, add class visible-->
 
-          <button class="hamburger-menu__close" id="close" (click)="toggleHamburgerMenu()">
+          <button
+            class="hamburger-menu__close"
+            id="close"
+            (click)="toggleHamburgerMenu()"
+          >
             <img
               class="hamburger-menu__close--img"
               src="../../../assets/images/icon-close.svg"
               alt="menu-close-icon"
             />
           </button>
-          
+
           <ul class="navbar__list">
             <li><a routerLink="views/news">News</a></li>
             <li><a routerLink="views/esports">E-sports</a></li>
-            <li><a routerLink="views/general-information">General Information</a></li>
+            <li>
+              <a routerLink="views/general-information">General Information</a>
+            </li>
             <li><a routerLink="views/about-us">About Us</a></li>
           </ul>
-
         </nav>
-      </div> <!--.hamburguer-menu-->
+      </div>
+      <!--.hamburguer-menu-->
       <div class="header__left--logo">
         <a routerLink="">
-          <img src="../../../assets/images/Valorant Tracker B&N Text.png" alt="logo" />
+          <img
+            src="../../../assets/images/Valorant Tracker B&N Text.png"
+            alt="logo"
+          />
         </a>
       </div>
-    </div> <!--.header__left-->
+    </div>
+    <!--.header__left-->
 
     <div class="header__right">
-      <img
+      <!-- <img
         class="header__right--avatar"
         src="../../../assets/images/image-avatar.png"
         alt="avatar image"
-      />
-    </div> <!--.header__right-->
-  </div> <!--.container-->
+        *ngIf="logged"
+      /> -->
+      <ng-container *ngIf="user$ | async as user; else showLogIn">
+        {{ user.email }}
+        <a routerLink="user/log-in" (click)="onSignOut()" class="link_logIn">
+        </a>
+      </ng-container>
+
+      <ng-template #showLogIn>
+        <a routerLink="user/log-in" class="link_logIn"> Log In </a>
+      </ng-template>
+
+    </div>
+    <!--.header__right-->
+  </div>
+  <!--.container-->
 </header>
 
 <div class="container">
   <hr class="header__line" />
 </div>
-

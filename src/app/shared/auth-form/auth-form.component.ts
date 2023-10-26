@@ -69,7 +69,7 @@ export class AuthFormComponent implements OnInit {
   private initForm(): void { // Init reactive form
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-      password: ['', [Validators.required, Validators.minLength(5)]]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     })
   }
 }
