@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Inject, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorMessageComponent } from "./components/error-message/error-message.component";
 import { AuthService } from 'src/app/services/auth.service';
@@ -36,7 +36,7 @@ export class AuthFormComponent implements OnInit {
   private readonly emailPattern: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   
-  constructor(private readonly fb: FormBuilder, private readonly authSvc: AuthService) { //dependency injection
+  constructor(private readonly fb: FormBuilder, private readonly authSvc: AuthService, private readonly router: Router) { //dependency injection
     
   }
 
@@ -64,6 +64,7 @@ export class AuthFormComponent implements OnInit {
 
   logInGoogle(): void {
     this.authSvc.logInGoogle();
+    this.router.navigate(['/home']);
   }
   
   private initForm(): void { // Init reactive form

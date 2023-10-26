@@ -11,6 +11,6 @@ export const onlyLoggedInGuard = () => {
     .pipe(
       take(1),
       tap( (isLoggedIn) =>
-       (isLoggedIn ? true: router.navigate(['/user/log-in'])))
+       !!isLoggedIn ? true: router.navigate(['/user/log-in']))
     )
 };

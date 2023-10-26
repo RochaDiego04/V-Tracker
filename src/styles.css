@@ -6,6 +6,7 @@
   --dark-primary-color: hsl(342, 94%, 19%);
   --dark-bg-details: hsl(332, 89%, 14%);
   --white: hsl(0, 0%, 100%);
+  --black: rgb(0, 3, 7);
 
   /*  DARK BG COLOR THEME */
   --dark-top-bg: hsl(226, 18%, 14%);

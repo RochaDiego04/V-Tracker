@@ -16,7 +16,7 @@ export class EmailVerificationComponent {
     this.authSvc.userState$.pipe(
       filter((authState) => authState !== null),
       tap((user) => (this.user = user)),
-      tap(() => this.authSvc.signOut)
+      tap(() => this.authSvc.signOut())
     )
     .subscribe();
   }

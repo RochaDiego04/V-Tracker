@@ -48,22 +48,20 @@
     <!--.header__left-->
 
     <div class="header__right">
-      <!-- <img
-        class="header__right--avatar"
-        src="../../../assets/images/image-avatar.png"
-        alt="avatar image"
-        *ngIf="logged"
-      /> -->
       <ng-container *ngIf="user$ | async as user; else showLogIn">
         {{ user.email }}
         <a routerLink="user/log-in" (click)="onSignOut()" class="link_logIn">
         </a>
+        <img
+          class="header__right--avatar"
+          src="{{ user.photoURL }}"
+          alt="avatar image"
+        />
       </ng-container>
 
       <ng-template #showLogIn>
         <a routerLink="user/log-in" class="link_logIn"> Log In </a>
       </ng-template>
-
     </div>
     <!--.header__right-->
   </div>

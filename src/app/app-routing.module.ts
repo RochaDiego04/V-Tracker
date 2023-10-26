@@ -11,6 +11,7 @@ import { EmailVerificationComponent } from './components/email-verification/emai
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { authGuard } from './shared/guards/auth.guard';
 import { onlyLoggedInGuard } from './shared/guards/only-logged-in.guard';
+import { LeagueOfLegendsComponent } from './components/league-of-legends/league-of-legends.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path: 'user/email-verification', component: EmailVerificationComponent},
   {path: 'user/forgot-password', component: ForgotPasswordComponent},
   /* Gaming Paths */
-  {path: 'games/league-of-legends', component: LogInComponent, canActivate: [onlyLoggedInGuard]}
+  {path: 'games/league-of-legends', component: LeagueOfLegendsComponent, canActivate: [onlyLoggedInGuard]} // user must be verified
 ];
 
 @NgModule({
