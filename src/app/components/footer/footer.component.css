@@ -38,7 +38,11 @@
     color: var(--dark-text3);
     background-color: var(--dark-top-bg);
     cursor: pointer;
-    border-bottom: 1.3px solid var(--dark-text3);
+    border-bottom: 1px solid var(--dark-text3);
+}
+
+.column__heading:hover{
+    border-bottom: 1px solid var(--details-color);
 }
 
 
@@ -48,6 +52,9 @@
         background-color: transparent;
         border-bottom: none;
         cursor: default;
+    }
+    .column__heading:hover{
+        border-bottom: none;
     }
 }
 

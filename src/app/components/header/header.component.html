@@ -49,18 +49,49 @@
 
     <div class="header__right">
       <ng-container *ngIf="user$ | async as user; else showLogIn">
-        {{ user.email }}
+        <!-- {{ user.email }}
         <a routerLink="user/log-in" (click)="onSignOut()" class="link_logIn">
-        </a>
+        </a> -->
         <img
+          (click)="toggleSubMenu()"
           class="header__right--avatar"
           src="{{ user.photoURL }}"
           alt="avatar image"
         />
+
+        <div class="sub-menu-wrap" [ngClass]="{'open-menu': isSubMenuOpen}">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img class="user-info__account-img" src="{{user.photoURL}}" alt="Profile Photo">
+              <div class="user-info__account-container">
+                <h3>{{user.displayName}}</h3>
+                <p>{{user.email}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="sub-menu__links">
+              <a routerLink="#" class="sub-menu__links--link">
+                <div class="sub-menu__links--left">
+                  <i class="uil uil-question-circle left-icon"></i>
+                  <p>Help & Support</p>
+                </div>
+                <i class="uil uil-angle-right-b arrow-icon"></i>
+              </a>
+              <a routerLink="user/log-in" (click)="onSignOut()" class="sub-menu__links--link">
+                <div class="sub-menu__links--left">
+                  <i class="uil uil-signout left-icon"></i>
+                  <p>Sign Out</p>
+                </div>
+                <i class="uil uil-angle-right-b arrow-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
       </ng-container>
 
       <ng-template #showLogIn>
-        <a routerLink="user/log-in" class="link_logIn"> Log In </a>
+        <a routerLink="user/log-in" class="header__right--link-logIn"> Log In </a>
       </ng-template>
     </div>
     <!--.header__right-->

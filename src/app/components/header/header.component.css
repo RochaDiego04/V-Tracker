@@ -36,10 +36,7 @@
 
 /* .header__right */
 .header__right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
+    position: relative;
 }
 
 /* .header__right--avatar */
@@ -63,7 +60,8 @@
         margin: 0;
     }
 }
-.link_logIn {
+
+.header__right--link-logIn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +78,7 @@
     cursor: pointer;
   }
 
-  .link_logIn:hover {
+  .header__right--link-logIn:hover {
     background-color: #aeaeae15;
   }
 

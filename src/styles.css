@@ -16,6 +16,7 @@
   --dark-text1: hsl(0, 0%, 77%);
   --dark-text2: hsl(0, 0%, 61%);
   --dark-text3: hsl(0, 0%, 46%);
+  --dark-text4: hsl(0, 0%, 89%);
   --dark-mobile-bar: hsl(237, 18%, 24%);
 
   /* FORMS */
@@ -32,7 +33,13 @@
 
   --error: hsl(0, 86%, 40%);
   --error-input-bg: rgb(238, 220, 220);
+
+  /* SUBMENU */
+  --submenu-bg: hsl(224, 18%, 30%);
 }
+
+
+  
 
 /* BREAKPOINTS DECLARATION
     --breakpoint-medium: 40em;
