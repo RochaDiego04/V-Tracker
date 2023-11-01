@@ -37,9 +37,13 @@ export class AuthFormComponent implements OnInit {
 
   
   constructor(private readonly fb: FormBuilder, private readonly authSvc: AuthService, private readonly router: Router) { //dependency injection
-    this.authSvc.authenticationError$.subscribe((error) => {
+    this.authSvc.authenticationError$
+    .subscribe((error) => {
       this.authenticationError = error;
-    }); // Get errors when submit form
+      setTimeout(() => { // Clear message after 7 seconds
+        this.authenticationError = '';
+      }, 7000);
+    });
   }
 
   ngOnInit(): void {

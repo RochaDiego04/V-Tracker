@@ -21,7 +21,19 @@ export class AuthService {
     private readonly googleProvider: GoogleAuthProvider,
     private readonly router: Router) {
       // this.signOut();
+  }
+
+  private mapFirebaseAuthErrorCodeToMessage(code: string): string {
+    switch (code) {
+      case 'auth/invalid-login-credentials':
+        return 'Invalid email or password. Please try again.';
+      case 'otro-codigo-de-error':
+        return 'Mensaje personalizado para otro error.';
+      // Agrega más casos según sea necesario para otros códigos de error.
+      default:
+        return 'An unexpected error occurred. Please try again later.';
     }
+  }
 
   get userState$() { //Observable
     return authState(this.auth);
@@ -47,7 +59,8 @@ export class AuthService {
 
     } catch (error: unknown) {
       const { code, message } = error as ErrorResponse;
-      this.authenticationErrorSubject.next(code + message);
+      const errorMessage = this.mapFirebaseAuthErrorCodeToMessage(code);
+      this.authenticationErrorSubject.next(errorMessage);
     }
   }
 
@@ -57,7 +70,8 @@ export class AuthService {
       this.checkUserIsVerified(user);
     } catch (error: unknown) {
       const { code, message } = error as ErrorResponse;
-      this.authenticationErrorSubject.next(code + message);
+      const errorMessage = this.mapFirebaseAuthErrorCodeToMessage(code);
+      this.authenticationErrorSubject.next(errorMessage);
     }
   }
 
