@@ -1,6 +1,7 @@
 import { Injectable} from '@angular/core';
 import { Auth, GoogleAuthProvider, User, authState, createUserWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithRedirect  } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 
 interface ErrorResponse {
@@ -12,6 +13,9 @@ interface ErrorResponse {
   providedIn: 'root'
 })
 export class AuthService {
+  private authenticationErrorSubject = new BehaviorSubject<string>('');
+  authenticationError$ = this.authenticationErrorSubject.asObservable();
+
   constructor(
     private readonly auth: Auth,
     private readonly googleProvider: GoogleAuthProvider,
@@ -36,15 +40,14 @@ export class AuthService {
       const {user} = await createUserWithEmailAndPassword(
         this.auth,
         email, 
-        password); // create user
+        password);
 
-      await this.sendEmailVerification(user); // send email verification
+      await this.sendEmailVerification(user); 
       this.router.navigate(['/user/email-verification']); // redirect to waiting page
 
     } catch (error: unknown) {
       const { code, message } = error as ErrorResponse;
-      console.log('Code', code);
-      console.log('Message', message);
+      this.authenticationErrorSubject.next(code + message);
     }
   }
 
@@ -54,8 +57,7 @@ export class AuthService {
       this.checkUserIsVerified(user);
     } catch (error: unknown) {
       const { code, message } = error as ErrorResponse;
-      console.log('Code', code);
-      console.log('Message', message);
+      this.authenticationErrorSubject.next(code + message);
     }
   }
 

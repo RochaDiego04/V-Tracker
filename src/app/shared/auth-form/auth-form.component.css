@@ -140,12 +140,11 @@
     border: none;
     border-radius: 0.7rem;
     font-size: 1.7rem;
-    margin-bottom: 1rem;
     cursor: pointer;
   }
 
   .form__btnGoogle:hover {
-    background-color: #aeaeae15;
+    background-color: var(--form-btn-transparent);
   }
 
   .logo__google {
@@ -163,3 +162,12 @@
   .invalid::placeholder {
     color: var(--error);
   }
+
+  .alert__error {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    color: var(--error);
+    margin: 1rem 1rem 1rem 1rem;
+}

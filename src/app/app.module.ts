@@ -18,6 +18,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { EmailVerificationComponent } from './components/email-verification/email-verification.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ErrorMessageComponent } from './shared/auth-form/components/error-message/error-message.component';
+import { LeagueOfLegendsComponent } from './components/league-of-legends/league-of-legends.component';
+import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
 
 /* Firebase */
 import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -26,10 +28,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { GoogleAuthProvider, connectAuthEmulator } from 'firebase/auth';
 import { connectFirestoreEmulator } from 'firebase/firestore';
-import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
 import { ReactiveFormsModule } from '@angular/forms';
-import { LeagueOfLegendsComponent } from './components/league-of-legends/league-of-legends.component';
-
+import { LoginAdvertisementComponent } from './components/login-advertisement/login-advertisement.component';
+import { GamesBarComponent } from './components/games-bar/games-bar.component';
 
 @NgModule({
     declarations: [
@@ -45,7 +46,9 @@ import { LeagueOfLegendsComponent } from './components/league-of-legends/league-
         SignUpComponent,
         EmailVerificationComponent,
         ForgotPasswordComponent,
-        LeagueOfLegendsComponent
+        LeagueOfLegendsComponent,
+        LoginAdvertisementComponent,
+        GamesBarComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],

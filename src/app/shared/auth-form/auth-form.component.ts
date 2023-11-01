@@ -30,14 +30,16 @@ export class AuthFormComponent implements OnInit {
   @Input() action!: ActionType;
   form!: FormGroup;
   title!: string;
-
   user$!: Observable<any>;
+  authenticationError: string = '';
   
   private readonly emailPattern: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   
   constructor(private readonly fb: FormBuilder, private readonly authSvc: AuthService, private readonly router: Router) { //dependency injection
-    
+    this.authSvc.authenticationError$.subscribe((error) => {
+      this.authenticationError = error;
+    }); // Get errors when submit form
   }
 
   ngOnInit(): void {
@@ -57,6 +59,7 @@ export class AuthFormComponent implements OnInit {
       ? this.authSvc.logIn(email, password)
       : this.authSvc.signUp(email, password);
   }
+  
   hasError(field: string): boolean {
     const fieldName = this.form.get(field);
     return !!fieldName && fieldName.invalid && fieldName.touched;
