@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'user/email-verification', component: EmailVerificationComponent},
   {path: 'user/forgot-password', component: ForgotPasswordComponent},
   /* Gaming Paths */
-  {path: 'games/login-advertisement', component: LoginAdvertisementComponent},
+  {path: 'games/login-advertisement', component: LoginAdvertisementComponent, canActivate: [authGuard]},
   {path: 'games/league-of-legends', component: LeagueOfLegendsComponent, canActivate: [onlyLoggedInGuard]} // user must be verified
 ];
 

@@ -1,0 +1,91 @@
+.overlay {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.advertisement__container {
+    z-index: 3;
+    background-color: var(--form-bg-blue);
+    width: 100%;
+    text-align: center;
+    margin: 3rem auto 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 
+        rgba(0, 0, 0, 0.25) 0px 14px 28px, 
+        rgba(0, 0, 0, 0.22) 0px 10px 10px, 
+        inset 0 0 4px hsla(220, 74%, 74%, 0.45);
+
+    /*  Positioning div as a modal */
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media (min-width: 40em) {
+    .advertisement__container {
+      max-width: 90rem;
+    }
+}
+
+.advertisement__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; 
+    margin-bottom: 1rem; 
+}
+
+.advertisement__header:hover {
+    cursor: pointer;
+    filter: invert(.5) brightness(2.5) saturate(100%) hue-rotate(0deg); 
+}
+
+.advertisement__title {
+    color: var(--white);
+    font-size: 2.7rem;
+}
+
+.advertisement__container--span {
+    color: var(--form-btn-bg);
+    font-size: 3.2rem;
+}
+
+.advertisement__instructions {
+    color: var(--white);
+    font-size: 1.8rem;
+}
+
+.advertisement__btnLogIn {
+    width: 100%;
+    padding: 1.2rem 1.8rem;
+    background-color: transparent;
+    outline: 1px solid var(--form-borders);
+    color: #fff; 
+    font-weight: 600;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 40em) {
+    .advertisement__btnLogIn {
+        width: 20rem;
+    }
+}
+
+.advertisement__btnLogIn:hover {
+    background-color: #aeaeae15;
+    outline: 2px solid var(--details-color);
+}
+
+

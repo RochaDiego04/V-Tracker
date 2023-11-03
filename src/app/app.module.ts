@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterOutlet } from '@angular/router';
@@ -31,6 +30,9 @@ import { connectFirestoreEmulator } from 'firebase/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginAdvertisementComponent } from './components/login-advertisement/login-advertisement.component';
 import { GamesBarComponent } from './components/games-bar/games-bar.component';
+
+/* NgPrime */
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -69,7 +71,8 @@ import { GamesBarComponent } from './components/games-bar/games-bar.component';
         }),
         AuthFormComponent,
         ReactiveFormsModule,
-        ErrorMessageComponent
+        ErrorMessageComponent,
+        BrowserAnimationsModule
     ]
 })
 export class AppModule { }

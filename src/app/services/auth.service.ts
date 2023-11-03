@@ -27,9 +27,12 @@ export class AuthService {
     switch (code) {
       case 'auth/invalid-login-credentials':
         return 'Invalid email or password. Please try again.';
-      case 'otro-codigo-de-error':
-        return 'Mensaje personalizado para otro error.';
-      // Agrega más casos según sea necesario para otros códigos de error.
+      case 'auth/email-already-in-use':
+        return 'Email is already in use. Please try another one.';
+      case 'auth/too-many-requests':
+        return 'Too many login attempts. Please try again later.';
+      case 'Other error code':
+        return 'Custom error message.';
       default:
         return 'An unexpected error occurred. Please try again later.';
     }
@@ -70,6 +73,7 @@ export class AuthService {
       this.checkUserIsVerified(user);
     } catch (error: unknown) {
       const { code, message } = error as ErrorResponse;
+      console.log(code)
       const errorMessage = this.mapFirebaseAuthErrorCodeToMessage(code);
       this.authenticationErrorSubject.next(errorMessage);
     }

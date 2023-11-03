@@ -1,1 +1,29 @@
-<p>login-advertisement works!</p>
+<section>
+  <div 
+    *ngIf="isModalShown"  
+    [@modalAnimation]="isModalShown ? 'open' : 'closed'"
+    class="advertisement__container">
+
+    <div class="advertisement__header">
+      <img
+        class="hamburger-menu__close--img"
+        src="/src/assets/images/icon-close.svg"
+        alt="menu-close-icon"
+        (click)="closeModal()"
+      />
+    </div>
+
+    <h1 class="advertisement__title">
+      Welcome to our platform!<br />
+      <span class="advertisement__container--span">
+        Unlock your game's stats by logging in.
+      </span>
+    </h1>
+    <p class="advertisement__instructions">Ready to dive into your account?</p>
+    <button class="advertisement__btnLogIn" (click)="redirectToLogin()">
+      Log In
+    </button>
+  </div>
+  
+  <div class="overlay" *ngIf="isModalShown" (click)="closeModal()"></div>
+</section>

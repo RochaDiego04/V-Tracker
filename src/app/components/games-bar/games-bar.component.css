@@ -2,6 +2,7 @@
     display: flex;
     margin: 0 auto;
     align-items: center;
+    justify-content: space-evenly;
     gap: 2rem;
     flex-wrap: wrap;
     max-width: 152rem;
@@ -23,8 +24,43 @@
     padding: 0.7rem;
     text-align: center;
     color: var(--white);
+    border-radius: 0.3rem;
 }
 
-.game:hover {
-    background-color: hsla(0, 0%, 68%, 0.193);
+@media (min-width: 40em) {
+    .game {
+        border-radius: 0 0 1.2rem 1.2rem;
+    }
+}
+
+.game--lol{
+    background: linear-gradient(to right,  hsla(159, 100%, 50%, 0.193), hsla(95, 100%, 50%, 0.249));
+}
+
+.game--lol:hover {
+    background: linear-gradient(to right,  hsla(159, 100%, 50%, 0.375), hsla(95, 100%, 50%, 0.427));
+}
+
+.game--valorant {
+    background: linear-gradient(to right,  hsla(0, 100%, 51%, 0.193), hsla(26, 87%, 47%, 0.249));
+}
+
+.game--valorant:hover {
+    background: linear-gradient(to right,  hsla(0, 100%, 51%, 0.424),  hsla(26, 87%, 47%, 0.504));
+}
+
+.game--apex {
+    background: linear-gradient(to right,  hsla(352, 100%, 51%, 0.193), hsla(282, 87%, 47%, 0.249));
+}
+
+.game--apex:hover {
+    background: linear-gradient(to right,  hsla(352, 100%, 51%, 0.354), hsla(282, 87%, 47%, 0.382));
+}
+
+.game--fortnite {
+    background: linear-gradient(to right,  hsla(193, 100%, 51%, 0.188), hsla(214, 87%, 47%, 0.268));
+}
+
+.game--fortnite:hover {
+    background: linear-gradient(to right,  hsla(193, 100%, 51%, 0.435), hsla(214, 87%, 47%, 0.486));
 }
