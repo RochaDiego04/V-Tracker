@@ -19,6 +19,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ErrorMessageComponent } from './shared/auth-form/components/error-message/error-message.component';
 import { LeagueOfLegendsComponent } from './components/league-of-legends/league-of-legends.component';
 import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
+import { LoginAdvertisementComponent } from './components/login-advertisement/login-advertisement.component';
+import { GamesBarComponent } from './components/games-bar/games-bar.component';
 
 /* Firebase */
 import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -28,11 +30,12 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { GoogleAuthProvider, connectAuthEmulator } from 'firebase/auth';
 import { connectFirestoreEmulator } from 'firebase/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginAdvertisementComponent } from './components/login-advertisement/login-advertisement.component';
-import { GamesBarComponent } from './components/games-bar/games-bar.component';
 
 /* NgPrime */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+/* http requests */
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -72,7 +75,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         AuthFormComponent,
         ReactiveFormsModule,
         ErrorMessageComponent,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        HttpClientModule
     ]
 })
 export class AppModule { }

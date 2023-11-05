@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
 import { Auth, GoogleAuthProvider, User, authState, createUserWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithRedirect  } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 
 interface ErrorResponse {
