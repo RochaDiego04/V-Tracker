@@ -13,6 +13,9 @@ import { authGuard } from './shared/guards/auth.guard';
 import { onlyLoggedInGuard } from './shared/guards/only-logged-in.guard';
 import { LeagueOfLegendsComponent } from './components/league-of-legends/league-of-legends.component';
 import { LoginAdvertisementComponent } from './components/login-advertisement/login-advertisement.component';
+import { LoginLeagueOfLegendsComponent } from './components/league-of-legends/login-league-of-legends/login-league-of-legends.component';
+import { StatsLeagueOfLegendsComponent } from './components/league-of-legends/stats-league-of-legends/stats-league-of-legends.component';
+import { leagueOfLegendsGuard } from './shared/guards/league-of-legends.guard';
 
 
 const routes: Routes = [
@@ -30,7 +33,21 @@ const routes: Routes = [
   {path: 'user/forgot-password', component: ForgotPasswordComponent},
   /* Gaming Paths */
   {path: 'games/login-advertisement', component: LoginAdvertisementComponent, canActivate: [authGuard]},
-  {path: 'games/league-of-legends', component: LeagueOfLegendsComponent, canActivate: [onlyLoggedInGuard]} // user must be verified
+  {
+    path: 'games/league-of-legends', 
+    component: LeagueOfLegendsComponent, 
+    canActivate: [onlyLoggedInGuard], //user must be verified
+    children: [
+      {
+        path: 'login',
+        component: LoginLeagueOfLegendsComponent
+      },
+      {
+        path: 'stats',
+        component: StatsLeagueOfLegendsComponent
+      }
+    ]
+  } 
 ];
 
 @NgModule({

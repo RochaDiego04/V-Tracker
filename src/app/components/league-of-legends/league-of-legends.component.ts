@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable, filter, take, tap } from 'rxjs';
-import { UserData } from 'src/app/interfaces/user-data';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable, take } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { LeagueOfLegendsService } from 'src/app/services/league-of-legends.service';
 
@@ -10,58 +9,39 @@ import { LeagueOfLegendsService } from 'src/app/services/league-of-legends.servi
   templateUrl: './league-of-legends.component.html',
   styleUrls: ['./league-of-legends.component.css'],
 })
-export class LeagueOfLegendsComponent {
+export class LeagueOfLegendsComponent implements OnInit {
   user$!: Observable<any>;
-  form!: FormGroup;
-  accountData: Object;
 
   constructor(
+    private lolService: LeagueOfLegendsService,
     private authSvc: AuthService,
-    private readonly fb: FormBuilder,
-    private lolService: LeagueOfLegendsService
-  ) {
-    this.accountData = new Object();
+    private router: Router){
+
   }
 
   ngOnInit(): void {
-    this.initForm();
     this.user$ = this.authSvc.userState$;
+    this.checkUserData();
   }
 
-  private initForm(): void {
-    // Init reactive form
-    this.form = this.fb.group({
-      account: ['', [Validators.required]],
-    });
-  }
-
-  onSubmit(): void {
+  checkUserData(): void {
     this.user$.pipe(
-      take(1) //Take the first value emitted from observable
-    ).subscribe((user) => {
-      if (user) {
-        const userId = user.uid;
-        const accountName = this.form.get('account')!.value;
-        this.lolService.verifyAccount(accountName)
-          .subscribe(response => {
-            console.log('Server response:', response);
-            this.accountData = response;
-            this.lolService.saveUserData(userId, this.form.value)
-              .then(() => {
-                console.log('League of Legends Data saved successfully!');
-              })
-              .catch(error => {
-                console.error('There has been an error saving data: ', error);
-              });
-          }, error => {
-            console.error('Error verifying account (didn\'t found): ', error);
-          });
+      take(1)
+    ).subscribe({
+      next: async (user) => {
+        if (user) {
+          const userId = user.uid; 
+          const accountName = await this.lolService.getUserData(userId);
+          console.log(accountName);
+          if (accountName && Object.keys(accountName).length > 0) {
+            this.router.navigate(['/games/league-of-legends/stats']);
+          } else {
+            this.router.navigate(['/games/league-of-legends/login']);
+          }
+        }
       }
     });
   }
 
-  hasError(field: string): boolean {
-    const fieldName = this.form.get(field);
-    return !!fieldName && fieldName.invalid && fieldName.touched;
-  }
+
 }

@@ -21,6 +21,8 @@ import { LeagueOfLegendsComponent } from './components/league-of-legends/league-
 import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
 import { LoginAdvertisementComponent } from './components/login-advertisement/login-advertisement.component';
 import { GamesBarComponent } from './components/games-bar/games-bar.component';
+import { StatsLeagueOfLegendsComponent } from './components/league-of-legends/stats-league-of-legends/stats-league-of-legends.component';
+import { LoginLeagueOfLegendsComponent } from './components/league-of-legends/login-league-of-legends/login-league-of-legends.component';
 
 /* Firebase */
 import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -51,9 +53,11 @@ import { HttpClientModule } from '@angular/common/http';
         SignUpComponent,
         EmailVerificationComponent,
         ForgotPasswordComponent,
-        LeagueOfLegendsComponent,
         LoginAdvertisementComponent,
-        GamesBarComponent
+        GamesBarComponent,
+        LeagueOfLegendsComponent,
+        StatsLeagueOfLegendsComponent,
+        LoginLeagueOfLegendsComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],
