@@ -84,12 +84,12 @@
 .footer__copyright {
     font-size: 1rem;
     text-align: center;
-    margin: 2rem 2rem;
+    margin: 2rem;
 }
 
 @media (min-width: 40em) {
     .footer__copyright {
-        margin: 0 2rem;
+        margin: 0 2rem 4rem 2rem;
     }
 }
 

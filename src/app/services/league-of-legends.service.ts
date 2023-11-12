@@ -3,14 +3,16 @@ import { deleteField, getDoc, getFirestore, updateDoc } from 'firebase/firestore
 import { UserData } from '../interfaces/user-data';
 import { setDoc, doc } from "firebase/firestore";
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LeagueOfLegendsService {
 
-  API_KEY = 'RGAPI-08416257-e31e-4928-865b-8f0985de7b00'; 
+  API_KEY = 'RGAPI-905b10f0-a44d-4c4d-8376-3ea1426a9c19'; 
   private firestore = getFirestore();
+  loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(private http: HttpClient) {}
 

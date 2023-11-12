@@ -6,8 +6,7 @@ import { LeagueOfLegendsService } from 'src/app/services/league-of-legends.servi
 
 @Component({
   selector: 'app-league-of-legends',
-  templateUrl: './league-of-legends.component.html',
-  styleUrls: ['./league-of-legends.component.css'],
+  templateUrl: './league-of-legends.component.html'
 })
 export class LeagueOfLegendsComponent implements OnInit {
   user$!: Observable<any>;
@@ -34,8 +33,10 @@ export class LeagueOfLegendsComponent implements OnInit {
           const accountName = await this.lolService.getUserData(userId);
           console.log(accountName);
           if (accountName && Object.keys(accountName).length > 0) {
+            this.lolService.loggedIn.next(true);
             this.router.navigate(['/games/league-of-legends/stats']);
           } else {
+            this.lolService.loggedIn.next(false);
             this.router.navigate(['/games/league-of-legends/login']);
           }
         }

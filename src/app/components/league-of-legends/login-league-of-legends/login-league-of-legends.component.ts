@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, filter, take, tap } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { UserData } from 'src/app/interfaces/user-data';
 import { AuthService } from 'src/app/services/auth.service';
 import { LeagueOfLegendsService } from 'src/app/services/league-of-legends.service';
@@ -49,6 +49,7 @@ export class LoginLeagueOfLegendsComponent {
                 console.log('Server response:', response);
                 this.lolService.saveUserData(userId, this.form.value)
                   .then(() => {
+                    this.lolService.loggedIn.next(true);
                     console.log('League of Legends Data saved successfully!');
                     this.router.navigate(['/games/league-of-legends/stats']);
                   })

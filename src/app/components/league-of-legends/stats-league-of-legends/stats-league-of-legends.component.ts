@@ -34,10 +34,13 @@ export class StatsLeagueOfLegendsComponent implements OnInit {
         if (user) {
           const userId = user.uid;
           await this.lolService.deleteUserData(userId);
+          this.lolService.loggedIn.next(false);
           console.log('User logged out successfully');
           this.router.navigate(['/games/league-of-legends/login']);
         }
       }
     });
   }
+
+
 }

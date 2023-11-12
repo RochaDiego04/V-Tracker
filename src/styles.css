@@ -10,6 +10,7 @@
   /*  DARK BG COLOR THEME */
   --dark-top-bg: hsl(226, 18%, 14%);
   --dark-bg: hsl(231, 16%, 16%);
+  --black-bg: hsla(240, 16%, 6%, 0.863);
   --dark-card: hsl(228, 32%, 19%);
   --dark-card-hover: hsl(228, 25%, 27%);
   --dark-text1: hsl(0, 0%, 77%);
@@ -29,7 +30,6 @@
   --form-btn-transparent: #aeaeae15;
 
   --font-Montserrat: 'Montserrat', sans-serif;
-  --font-Jost: 'Jost', sans-serif;
 
   --error: hsl(0, 86%, 40%);
   --error-input-bg: rgb(238, 220, 220);

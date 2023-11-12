@@ -1,0 +1,175 @@
+/* MAIN BANNER */
+.banner__black {
+    background-color: var(--black-bg);
+    text-align: center;
+}
+
+.banner__black--information {
+    text-align: left;
+    margin: 2rem auto 0 auto;
+    max-width: 180rem;
+    padding: 20rem 3.5rem 5rem 3.5rem;
+}
+
+.banner__black--information h1 {
+    font-size: 8rem;
+    background-image: linear-gradient(43deg, rgb(223, 93, 204) 0%, rgb(243, 182, 255) 30%, rgb(255, 187, 0) 100%);
+    -webkit-background-clip: text;
+    background-clip: text; 
+    color: transparent;
+    text-shadow: 4px 2.5px 0 rgba(135, 129, 174, 0.153);
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 40em) {
+    .banner__black--information h1 {
+        font-size: 12rem;
+    }
+}
+
+.flex__container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 72em) {
+    .flex__container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10rem;
+    }
+}
+
+.information {
+    padding-top: 3rem;
+    color: rgb(182, 191, 222);
+    font-size: 3rem;
+    text-align: justify;
+}
+
+@media (min-width: 40em) {
+    .information {
+        font-size: 4rem;
+    }
+}
+
+.information span{
+    color: rgb(232, 235, 255);
+}
+
+.flex__container--pngImg {
+    margin: 0 auto;
+    max-width: 30rem;
+    max-height: 30rem;
+}
+
+@media (min-width: 40em) {
+    .flex__container--pngImg {
+        max-width: 50rem;
+        max-height: 50rem;
+        min-width: 40rem;
+        min-height: 40rem;
+    }
+}
+
+/* DECORATIONS */
+.trapezoidal {
+    background-image: url("/src/assets/images/home_images/trapezoid.svg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 15rem;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+}
+
+.banner__fadingColor {
+    margin-top: -14.8rem;
+    height: 24rem;
+    background: linear-gradient(to top, transparent, var(--black-bg) 95%), linear-gradient(43deg, rgb(223, 93, 204) 0%, rgb(243, 182, 255) 30%, rgb(255, 162, 0) 100%);
+}
+
+.banner__fadingColor--Bottomline {
+    height: 2rem;
+    background-color: hsla(240, 16%, 6%, 0.6);
+}
+
+/* IMAGES CONTAINER */
+.images__container {
+    margin: 5rem auto 5rem auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 140rem;
+    padding: 1rem;
+    height: 150rem;
+    gap: 2rem;
+}
+
+@media (min-width: 40em) {
+    .images__container {
+        height: auto;
+        margin: 15rem auto 15rem auto;
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50rem 50rem;
+    }
+}
+
+.main__image,
+.secondary__image1,
+.secondary__image2 {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: border-box;  
+}
+
+.main__image {
+    grid-column: 1 / 3;
+    background-image: url("/src/assets/images/home_images/photo-1633545495735-25df17fb9f31_1525x1015.webp");
+}
+
+.secondary__image1 {
+    background-image: url("/src/assets/images/home_images/lol-champions.webp");
+}
+
+.secondary__image2 {
+    background-image: url("/src/assets/images/home_images/valorant_weapons.png");
+}
+
+.images__container--leftText,
+.images__container--rightText {
+    font-size: 2rem;
+    text-align: justify;
+    margin: 0;
+    color: var(--white);
+}
+
+/* THIRD SECTION */
+
+.black-background {
+    background-color: var(--black);
+    height: 210rem;
+}
+
+.thirdSection__titleContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.thirdSection__titleContainer h2 {
+    margin: 35rem 0;
+    padding: 2rem;
+    font-size: 5.5rem;
+    color: hsl(37, 100%, 86%);
+    text-shadow: 0 0 0.75rem rgba(209, 29, 203, 0.828);
+}
+
+@media (min-width: 40em) {
+    .thirdSection__titleContainer h2 {
+        font-size: 7rem;
+    }
+}

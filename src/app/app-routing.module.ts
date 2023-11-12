@@ -40,11 +40,13 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: LoginLeagueOfLegendsComponent
+        component: LoginLeagueOfLegendsComponent,
+        canActivate: [leagueOfLegendsGuard]
       },
       {
         path: 'stats',
-        component: StatsLeagueOfLegendsComponent
+        component: StatsLeagueOfLegendsComponent,
+        canActivate: [leagueOfLegendsGuard]
       }
     ]
   } 
