@@ -1,2 +1,7 @@
 <p>stats-league-of-legends works!</p>
 <button (click)="logout()">Logout</button>
+
+<div *ngIf="accountInfo | async as info">
+    <pre>{{ info | json }}</pre>
+  </div>
+  

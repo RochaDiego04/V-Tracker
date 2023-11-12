@@ -30,9 +30,8 @@ export class LeagueOfLegendsComponent implements OnInit {
       next: async (user) => {
         if (user) {
           const userId = user.uid; 
-          const accountName = await this.lolService.getUserData(userId);
-          console.log(accountName);
-          if (accountName && Object.keys(accountName).length > 0) {
+          const accountName = await this.lolService.getAccountName(userId);
+          if (accountName) { 
             this.lolService.loggedIn.next(true);
             this.router.navigate(['/games/league-of-legends/stats']);
           } else {
@@ -43,6 +42,7 @@ export class LeagueOfLegendsComponent implements OnInit {
       }
     });
   }
+  
 
 
 }

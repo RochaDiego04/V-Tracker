@@ -41,13 +41,13 @@ export class LoginLeagueOfLegendsComponent {
     ).subscribe({
       next: (user) => {
         if (user) {
-          const userId = user.uid; // Need page account to save into database doc
+          const userId = user.uid; // You must have a main account to link account to it.
           const accountName = this.form.get('account')!.value;
-          this.lolService.verifyAccount(accountName)
+          this.lolService.getAccountInfoAPI(accountName) // Validate if account exists
             .subscribe({
               next: (response) => {
                 console.log('Server response:', response);
-                this.lolService.saveUserData(userId, this.form.value)
+                this.lolService.postAccountName(userId, this.form.value)
                   .then(() => {
                     this.lolService.loggedIn.next(true);
                     console.log('League of Legends Data saved successfully!');
