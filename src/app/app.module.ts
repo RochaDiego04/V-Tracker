@@ -23,6 +23,8 @@ import { LoginAdvertisementComponent } from './components/login-advertisement/lo
 import { GamesBarComponent } from './components/games-bar/games-bar.component';
 import { StatsLeagueOfLegendsComponent } from './components/league-of-legends/stats-league-of-legends/stats-league-of-legends.component';
 import { LoginLeagueOfLegendsComponent } from './components/league-of-legends/login-league-of-legends/login-league-of-legends.component';
+import { ChartComponent } from './components/league-of-legends/stats-league-of-legends/chart/chart.component';
+
 
 /* Firebase */
 import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -57,7 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
         GamesBarComponent,
         LeagueOfLegendsComponent,
         StatsLeagueOfLegendsComponent,
-        LoginLeagueOfLegendsComponent
+        LoginLeagueOfLegendsComponent,
+        ChartComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],

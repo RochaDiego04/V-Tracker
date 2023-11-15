@@ -1,0 +1,67 @@
+/* ---------TOP SECTION--------- */
+.top-section__container {
+    display: block;
+    background-color: var(--black-bg);
+    padding: 0.8rem;
+    border-radius: 3px;
+}
+
+@media (min-width: 40em) {
+    .top-section__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+    }   
+}
+
+.account__information {
+    flex: 3;
+
+    background-color: var(--dark-card);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 2rem 2rem 3rem;
+    border-radius: 5px;
+}
+
+.account__information--photo img{
+    max-width: 10rem;
+    border-radius: 50%;
+    outline: 2px solid var(--white);
+}
+
+.account__information--information {
+    align-items: center;
+}
+
+.account__information--information h2 {
+    color: var(--dark-text4);
+    margin-bottom: 1rem;
+}
+
+.account__information--information p {
+    color: var(--dark-text2);
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.winned__matches {
+    flex: 5;
+
+    height: 15rem;
+    background-color: var(--dark-card);
+    border-radius: 5px;
+}
+
+.logout__container {
+    flex: 1;
+    order: 1;
+    text-align: end;
+}
+
+@media (min-width: 40em) {
+    .logout__container {
+        text-align: center;
+    }
+}

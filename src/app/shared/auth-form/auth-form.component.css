@@ -117,7 +117,7 @@
   .form__footerAdvertisement {
     font-size: 1.4rem;
     font-weight: 400;
-    color: hsl(227, 17%, 50%); 
+    color: hsl(228, 21%, 72%); 
     margin-top: 1rem;
   }
   
@@ -133,7 +133,7 @@
 
     width: 100%;
     padding: 1.2rem 1.8rem;
-    background-color: transparent;
+    background-color: var(--form-btn-transparent);
     outline: 1px solid var(--form-borders);
     color: #fff; 
     font-weight: 600;
@@ -144,7 +144,7 @@
   }
 
   .form__btnGoogle:hover {
-    background-color: var(--form-btn-transparent);
+    background-color: var(--form-btn-transparent-hover);
   }
 
   .logo__google {

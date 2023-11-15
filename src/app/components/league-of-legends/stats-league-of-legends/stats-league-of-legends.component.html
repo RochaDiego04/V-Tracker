@@ -1,7 +1,29 @@
-<p>stats-league-of-legends works!</p>
-<button (click)="logout()">Logout</button>
+<div class="top-section__container container">
+    <div class="logout__container">
+        <button (click)="logout()">Logout</button>
+    </div>
+    
+    <div class="account__information">
+        <div class="account__information--photo">
+            <img [src]="profilePhotoUrl" alt="">
+        </div>
+        <div class="account__information--information">
+            <h2>{{ (accountInfo | async)?.name }}</h2>
+            <p>Lvl: {{ (accountInfo | async)?.summonerLevel }}</p>
+        </div>
+    </div>
+
+    <div class="winned__matches">
+        <app-chart [puuid]="(accountInfo | async)?.puuid"></app-chart>
+    </div>
+</div>
+
+
+
+
+
 
 <div *ngIf="accountInfo | async as info">
     <pre>{{ info | json }}</pre>
-  </div>
+</div>
   

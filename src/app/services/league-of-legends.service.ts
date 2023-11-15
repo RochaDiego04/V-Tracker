@@ -3,20 +3,20 @@ import { deleteField, getDoc, getFirestore, updateDoc } from 'firebase/firestore
 import { UserData } from '../interfaces/user-data';
 import { setDoc, doc } from "firebase/firestore";
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LeagueOfLegendsService {
 
-  API_KEY = 'RGAPI-62fe5b6d-174c-459a-a9dc-813d35daf271'; 
+  API_KEY = 'RGAPI-15db51db-e8b7-49a6-83d8-28dad5bce883'; 
   private firestore = getFirestore();
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(private http: HttpClient) {}
 
-  // POST
+  // POST FIRESTORE
   async postAccountName(userId: string, userData: UserData) {
     const docRef = doc(this.firestore, `Users/${userId}/Games/LeagueOfLegends`);
     try {
@@ -25,7 +25,7 @@ export class LeagueOfLegendsService {
     }
   }
 
-  // GET
+  // GET FIRESTORE
   async getAccountName(userId: string): Promise<string | null> {
     const docRef = doc(this.firestore, `Users/${userId}/Games/LeagueOfLegends`);
     const docSnap = await getDoc(docRef);
@@ -39,7 +39,7 @@ export class LeagueOfLegendsService {
     }
   }
 
-  // DELETE
+  // DELETE FIRESTORE
   async deleteAccountName(userId: string) {
     const docRef = doc(this.firestore, `Users/${userId}/Games/LeagueOfLegends`);
     return updateDoc(docRef, {
@@ -52,5 +52,27 @@ export class LeagueOfLegendsService {
     let url = `https://la1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${accountName}?api_key=${this.API_KEY}`;
     return this.http.get(url);
   }
+
+  getProfilePhotoAPI(profileIconId: number, version: string): string {
+    let url = `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${profileIconId}.png`;
+    return url;
+  }
+
+  getCurrentVersionAPI(): Observable<string> {
+    let url = 'https://ddragon.leagueoflegends.com/api/versions.json';
+    return this.http.get<string[]>(url).pipe(map(versions => versions[0]));
+  }
+
+  getMatchIds(puuid: string): Observable<any> {
+    const url = `https://la1.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=10&api_key=${this.API_KEY}`;
+    return this.http.get<any>(url);
+  }
+
+  getMatchData(matchId: string): Observable<any> {
+    const url = `https://<region>.api.riotgames.com/lol/match/v4/matches/${matchId}?api_key=${this.API_KEY}`;
+    return this.http.get<any>(url);
+  }
+
+
 
 }

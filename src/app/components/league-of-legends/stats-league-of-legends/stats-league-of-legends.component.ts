@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subscription, take } from 'rxjs';
+import { Observable, Subscription, firstValueFrom, take } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { LeagueOfLegendsService } from 'src/app/services/league-of-legends.service';
 
@@ -13,6 +13,7 @@ export class StatsLeagueOfLegendsComponent implements OnInit {
   user$!: Observable<any>;
   accountInfo!: Observable<any>;
   accountName!: string;
+  profilePhotoUrl!: string; 
 
   constructor(
     private lolService: LeagueOfLegendsService,
@@ -22,18 +23,7 @@ export class StatsLeagueOfLegendsComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$ = this.authSvc.userState$;
-    this.user$.pipe(
-      take(1)
-    ).subscribe({
-      next: async (user) => {
-        if (user) {
-          const userId = user.uid;
-          const accountName = await this.lolService.getAccountName(userId);
-          if(accountName)
-            this.accountInfo = this.lolService.getAccountInfoAPI(accountName);
-        }
-      }
-    });
+    this.getAccountInfo();
   }
   
   ngOnDestroy(): void {
@@ -55,6 +45,35 @@ export class StatsLeagueOfLegendsComponent implements OnInit {
       }
     });
   }
+
+  getAccountInfo(): void {
+    this.user$.pipe(
+      take(1)
+    ).subscribe({
+      next: async (user) => {
+        if (user) {
+          const userId = user.uid;
+          const accountName = await this.lolService.getAccountName(userId);
+          if(accountName)
+            this.accountInfo = this.lolService.getAccountInfoAPI(accountName);
+            this.getProfilePhotoUrl();
+        }
+      }
+    });
+  }
+
+  getProfilePhotoUrl(): void {
+    this.accountInfo.pipe(
+      take(1)
+    ).subscribe({
+      next: async (accountInfo) => {
+        const profileIconId = accountInfo.profileIconId;
+        const version = await firstValueFrom(this.lolService.getCurrentVersionAPI());
+        this.profilePhotoUrl = this.lolService.getProfilePhotoAPI(profileIconId, version);
+      }
+    });
+  }
+  
 
 
 }

@@ -2,40 +2,40 @@
 @import "primeng/resources/primeng.css";
 
 :root {
+  --font-Montserrat: 'Montserrat', sans-serif;
+
   /*  COLOR DEFINITION */
   --details-color: hsl(36, 98%, 49%);
   --white: hsl(0, 0%, 100%);
   --black: rgb(0, 3, 7);
+  --error: hsl(0, 86%, 40%);
+  --error-input-bg: rgb(238, 220, 220);
 
   /*  DARK BG COLOR THEME */
   --dark-top-bg: hsl(226, 18%, 14%);
   --dark-bg: hsl(231, 16%, 16%);
   --black-bg: hsla(240, 16%, 6%, 0.863);
-  --dark-card: hsl(228, 32%, 19%);
-  --dark-card-hover: hsl(228, 25%, 27%);
   --dark-text1: hsl(0, 0%, 77%);
   --dark-text2: hsl(0, 0%, 61%);
   --dark-text3: hsl(0, 0%, 46%);
   --dark-text4: hsl(0, 0%, 89%);
-  --dark-mobile-bar: hsl(237, 18%, 24%);
 
   /* FORMS */
   --form-bg: hsl(205, 28%, 17%);
-  --form-bg-blue: hsl(220, 25%, 9%);
+  --form-bg-blue: rgb(41, 44, 59);
   --form-input: rgba(50, 63, 84, 0.709);
   --form-borders: hsla(0, 10%, 90%, 0.258);
   --form-focused: hsl(36, 75%, 39%);
   --form-btn-bg: hsl(36, 64%, 54%);
   --form-btn-hover: hsl(36, 81%, 54%);
-  --form-btn-transparent: #aeaeae15;
+  --form-btn-transparent: rgb(39, 42, 56);
+  --form-btn-transparent-hover: rgba(51, 54, 73, 0.534);
 
-  --font-Montserrat: 'Montserrat', sans-serif;
-
-  --error: hsl(0, 86%, 40%);
-  --error-input-bg: rgb(238, 220, 220);
+  /* STAT CARDS*/
+  --dark-card: rgb(45, 49, 65);
 
   /* SUBMENU */
-  --submenu-bg: hsl(224, 18%, 30%);
+  --submenu-bg: hsl(226, 18%, 29%);
 }
 
 /* BREAKPOINTS DECLARATION
