@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable, map } from 'rxjs';
 })
 export class LeagueOfLegendsService {
 
-  API_KEY = 'RGAPI-15db51db-e8b7-49a6-83d8-28dad5bce883'; 
+  API_KEY = 'RGAPI-81c4da75-f2e9-4284-b84d-6525a8794431'; 
   private firestore = getFirestore();
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
@@ -64,12 +64,12 @@ export class LeagueOfLegendsService {
   }
 
   getMatchIds(puuid: string): Observable<any> {
-    const url = `https://la1.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=10&api_key=${this.API_KEY}`;
+    const url = `https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=${this.API_KEY}`;
     return this.http.get<any>(url);
   }
 
   getMatchData(matchId: string): Observable<any> {
-    const url = `https://<region>.api.riotgames.com/lol/match/v4/matches/${matchId}?api_key=${this.API_KEY}`;
+    const url = `https://americas.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${this.API_KEY}`;
     return this.http.get<any>(url);
   }
 

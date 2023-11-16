@@ -41,6 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /* http requests */
 import { HttpClientModule } from '@angular/common/http';
 
+/* Decorations */
+
 @NgModule({
     declarations: [
         AppComponent,
