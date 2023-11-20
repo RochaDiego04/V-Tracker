@@ -7,6 +7,8 @@
 
   /*  COLOR DEFINITION */
   --details-color: hsl(36, 81%, 58%);
+  --pink: hsl(325, 81%, 45%);
+  --pink-gradient: hsla(309, 87%, 63%, 0.243);
   --white: hsl(0, 0%, 100%);
   --black: rgb(0, 3, 7);
   --error: hsl(0, 86%, 40%);
