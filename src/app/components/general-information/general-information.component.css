@@ -85,15 +85,9 @@
   margin-top: 7rem;
 }
 
-.gralInfo__imageContainer {
+.gralInfo__chartContainer {
   display: flex;
   justify-content: space-around;
-}
-
-.gralInfo__image {
-  max-width: 50rem;
-  min-width: 30rem;
-  width: 50rem;
 }
 
 .appAdvantage {

@@ -1,76 +1,65 @@
 <div class="page__container container">
-    <section>
-        <div class="gralInfo">
-            <h1 class="gralInfo__title">Get competitive while having fun!</h1>
-            <p class="gralInfo__info">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur,
-              magnam.icing elit. Consectetur,
-              magnam.
-            </p>
-            <div class="gralInfo__buttons">
-                <a routerLink="/user/log-in" class="gralInfo__button">Get Started</a>
-                <a routerLink="#" class="gralInfo__button">Learn More</a>
-            </div>
-            <p class="gralInfo__trustInfo">
-                Trusted by the gaming community
-            </p>
-            <div class="blur__circle"></div>
-        </div>
-        <div class="gralInfo__imageContainer">
-            <img class="gralInfo__image" src="/src/assets/images/general_information/graph.png" alt="">
-        </div>
-        <div class="appAdvantage">
-            <h2 class="appAdvantage__title">App Advantage</h2>
-            <p class="appAdvantage__text">Stay logged into your game accounts and relish the joy of tracking your progress statistically. Keep the gaming journey alive with continuous connection! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident animi consectetur culpa facere sunt deserunt magnam assumenda excepturi, accusantium minima sequi quisquam enim, quae aperiam, ducimus odit porro iste dignissimos?</p>
-            <a class="appAdvantage__link" routerLink="user/log-in">Get Started</a>
-        </div>
-    </section>
+  <section>
+    <div class="gralInfo">
+      <h1 class="gralInfo__title">Get competitive while having fun!</h1>
+      <p class="gralInfo__info">
+        Empower yourself with personalized insights and analytics to level up
+        your gaming skills.
+      </p>
+      <div class="gralInfo__buttons">
+        <a routerLink="/user/log-in" class="gralInfo__button">Get Started</a>
+        <a routerLink="#" class="gralInfo__button">Learn More</a>
+      </div>
+      <p class="gralInfo__trustInfo">Trusted by the gaming community</p>
+      <div class="blur__circle"></div>
+    </div>
 
-    <section class="moreFeatures container">
-        <div class="feature">
-            <div class="feature__infoContainer">
-                <h2 class="feature__title">Fostering our users to be better every day</h2>
-                <p class="feature__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolores dignissimos id magni molestiae possimus ad maiores, culpa incidunt labore et aut ratione neque nihil quibusdam impedit perferendis modi quisquam.</p>
-                <ul class="feature__list">
-                    <li>Info 1</li>
-                    <li>Info 2</li>
-                    <li>Info 3</li>
-                    <li>Info 4</li>
-                </ul>
-            </div>
-            <div class="feature__imageContainer">
-                <img class="feature__image" src="/src/assets/images/general_information/graph.png" alt="">
-            </div>
-        </div>
-        <div class="feature feature__reversed">
-            <div class="feature__infoContainer">
-                <h2 class="feature__title">Watch your stats in the simplest way</h2>
-                <p class="feature__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolores dignissimos id magni molestiae possimus ad maiores, culpa incidunt labore et aut ratione neque nihil quibusdam impedit perferendis modi quisquam.</p>
-                <ul class="feature__list">
-                    <li>Info 1</li>
-                    <li>Info 2</li>
-                    <li>Info 3</li>
-                    <li>Info 4</li>
-                </ul>
-            </div>
-            <div class="feature__imageContainer">
-                <img class="feature__image" src="/src/assets/images/general_information/graph_bars.png" alt="">
-            </div>
-        </div>
-        <div class="feature">
-            <div class="feature__infoContainer">
-                <h2 class="feature__title">We will keep you logged into your games accounts</h2>
-                <p class="feature__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolores dignissimos id magni molestiae possimus ad maiores, culpa incidunt labore et aut ratione neque nihil quibusdam impedit perferendis modi quisquam.</p>
-                <ul class="feature__list">
-                    <li>Info 1</li>
-                    <li>Info 2</li>
-                    <li>Info 3</li>
-                    <li>Info 4</li>
-                </ul>
-            </div>
-            <div class="feature__imageContainer">
-                <img class="feature__image" src="/src/assets/images/general_information/graph_bars.png" alt="">
-            </div>
-        </div>
-    </section>
+    <div class="gralInfo__chartContainer">
+      <ngx-charts-line-chart class="gralInfo__chart"
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="multi"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [autoScale]="autoScale"
+        (select)="onSelect($event)"
+      >
+      </ngx-charts-line-chart>
+    </div>
+
+    <div class="appAdvantage">
+      <h2 class="appAdvantage__title">App Advantage</h2>
+      <p class="appAdvantage__text">
+        Stay logged into your game accounts and relish the joy of tracking your
+        progress statistically. Keep the gaming journey alive with continuous
+        connection!
+      </p>
+      <a class="appAdvantage__link" routerLink="/user/log-in">Get Started</a>
+    </div>
+  </section>
+
+  <section class="moreFeatures container">
+    <div
+      *ngFor="let feature of features"
+      [ngClass]="{ feature__reversed: feature.reversed }"
+      class="feature"
+    >
+      <div class="feature__infoContainer">
+        <h2 class="feature__title">{{ feature.title }}</h2>
+        <p class="feature__info">{{ feature.info }}</p>
+        <ul class="feature__list">
+          <li *ngFor="let item of feature.list">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="feature__imageContainer">
+        <img class="feature__image" [src]="feature.imageSrc" alt="" />
+      </div>
+    </div>
+  </section>
 </div>

@@ -41,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /* http requests */
 import { HttpClientModule } from '@angular/common/http';
 
-/* Decorations */
+/* Charts */
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
     declarations: [
@@ -85,7 +86,8 @@ import { HttpClientModule } from '@angular/common/http';
         ReactiveFormsModule,
         ErrorMessageComponent,
         BrowserAnimationsModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxChartsModule
     ]
 })
 export class AppModule { }
