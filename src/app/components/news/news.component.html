@@ -1,1 +1,19 @@
-<p>news works!</p>
+<section class="news">
+    <div class="showcase__container container">
+        <h2 class="showcase__title">Big News Today</h2>
+        <p class="showcase__information">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae asperiores mollitia dolorem hic exercitationem distinctio obcaecati reiciendis placeat quibusdam, quos tempore praesentium dolorum totam voluptatibus sint ut perferendis soluta id eius laudantium? Excepturi, magnam asperiores. Aspernatur ipsam unde recusandae incidunt!</p>
+        <a routerLink="#" class="showcase__btn">Read More <i class="uil uil-angle-right-b"></i></a>
+    </div>
+
+    <div class="grid-container allNews__container container">
+        <div class="news__container" *ngFor="let item of gridItems">
+          <img class="news__image" [src]="item.imageSrc" alt="Imagen">
+          <h2 class="news__title">{{ item.title }}</h2>
+          <p class="news__information">{{ item.description }}</p>
+          <a class="news__link" routerLink="#">Learn More <i class="uil uil-angle-double-right"></i></a>
+        </div>
+    </div>
+
+
+</section>
+

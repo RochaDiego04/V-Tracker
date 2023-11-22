@@ -88,6 +88,13 @@
 .gralInfo__chartContainer {
   display: flex;
   justify-content: space-around;
+
+}
+
+@media (min-width: 40em) {
+  .gralInfo__chartContainer {
+    margin-left: 7rem;
+  }
 }
 
 .appAdvantage {

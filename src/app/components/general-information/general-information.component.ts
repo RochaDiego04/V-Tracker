@@ -58,21 +58,21 @@ export class GeneralInformationComponent {
       title: 'Unlock Your Gaming Potential',
       info: 'Empower yourself with personalized insights and analytics to level up your gaming skills.',
       list: ['Track victories and defeats', 'Discover winning strategies', 'Achieve higher levels', 'Compete with confidence'],
-      imageSrc: '/src/assets/images/general_information/graph.png',
+      imageSrc: '/src/assets/images/img_general-information/graph.png',
       reversed: false
     },
     {
       title: 'Visualize Your Achievements',
       info: 'Immerse yourself in a visually stunning representation of your gaming achievements with interactive graphs and charts.',
       list: ['Visualize gameplay statistics', 'Compare performance over time', 'Celebrate milestones', 'Share your success'],
-      imageSrc: '/src/assets/images/general_information/graph_bars.png',
+      imageSrc: '/src/assets/images/img_general-information/graph_bars.png',
       reversed: true
     },
     {
       title: 'Dive Into Data with our Graphs',
       info: 'Experience a new dimension of data exploration with insightful pie charts, providing a holistic view of your gaming prowess.',
       list: ['Explore diverse game metrics', 'Uncover hidden patterns', 'Optimize your gameplay', 'Stay ahead of the competition'],
-      imageSrc: '/src/assets/images/general_information/pie-chart.png',
+      imageSrc: '/src/assets/images/img_general-information/pie-chart.png',
       reversed: false
     }
   ];
