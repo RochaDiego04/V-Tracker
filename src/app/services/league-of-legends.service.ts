@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable, map } from 'rxjs';
 })
 export class LeagueOfLegendsService {
 
-  API_KEY = 'RGAPI-92dba693-a319-4973-ac95-806dd0c62b95'; 
+  API_KEY = 'RGAPI-84b95a54-e87c-463c-91d6-2d483f03b5c1'; 
   private firestore = getFirestore();
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
@@ -58,7 +58,7 @@ export class LeagueOfLegendsService {
     return url;
   }
 
-  getCurrentVersionAPI(): Observable<string> {
+  getCurrentVersionAPI(): Observable<string> { // The version is needed in the Profile photo
     let url = 'https://ddragon.leagueoflegends.com/api/versions.json';
     return this.http.get<string[]>(url).pipe(map(versions => versions[0]));
   }

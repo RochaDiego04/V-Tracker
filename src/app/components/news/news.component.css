@@ -1,6 +1,5 @@
 /* Main Showcase */
 .showcase__container {
-  padding: 1rem;
   margin-top: 2rem;
   width: 100%;
   background-color: blueviolet;
@@ -10,7 +9,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 5rem;
+  padding: 5rem 5rem 10rem 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +29,7 @@
 
 .showcase__information {
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .showcase__btn {

@@ -1,6 +1,6 @@
 <div class="top-section__container container">
     <div class="logout__container">
-        <button (click)="logout()">Logout</button>
+        <button class="logout__button" (click)="logout()">Logout</button>
     </div>
     
     <div class="account__information">
@@ -13,8 +13,8 @@
         </div>
     </div>
 
-    <div class="winned__matches">
-        <app-chart [puuid]="(accountInfo | async)?.puuid"></app-chart>
+    <div class="kills__matches">
+        <app-chart [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart>
     </div>
 </div>
 

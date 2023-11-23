@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subscription, firstValueFrom, take } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, firstValueFrom, take } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { LeagueOfLegendsService } from 'src/app/services/league-of-legends.service';
 
@@ -14,6 +14,9 @@ export class StatsLeagueOfLegendsComponent implements OnInit {
   accountInfo!: Observable<any>;
   accountName!: string;
   profilePhotoUrl!: string; 
+
+  private matchDataSubject = new BehaviorSubject<any[]>([]);
+  matchData$ = this.matchDataSubject.asObservable();
 
   constructor(
     private lolService: LeagueOfLegendsService,
@@ -46,17 +49,45 @@ export class StatsLeagueOfLegendsComponent implements OnInit {
     });
   }
 
-  getAccountInfo(): void {
+getAccountInfo(): void {
+    // Suscribing to the main user to get the uid
     this.user$.pipe(
-      take(1)
+      take(1) 
     ).subscribe({
       next: async (user) => {
         if (user) {
           const userId = user.uid;
+          // Getting the account name from firestore
           const accountName = await this.lolService.getAccountName(userId);
-          if(accountName)
+          if (accountName) {
+            // Getting the account info with the account name
             this.accountInfo = this.lolService.getAccountInfoAPI(accountName);
             this.getProfilePhotoUrl();
+
+            // Inside the accountInfo observable we will get the puuid.
+            this.accountInfo.subscribe({
+              next: async (info) => {
+                const puuid = info.puuid;
+
+               // Getting id of every match
+                const matchIds = await firstValueFrom(this.lolService.getMatchIds(puuid));
+                
+                // Creating an array to push match data
+                const matchDataArray = []; 
+
+                // Getting every match information iterating the matches id's
+                for (const matchId of matchIds) {
+                  const matchData = await firstValueFrom(this.lolService.getMatchData(matchId));
+                  matchDataArray.push(matchData);
+                }
+                // Update BehaviorSubject with matches information
+                this.matchDataSubject.next(matchDataArray);
+              },
+              error: (error) => {
+                console.error('Error getting the puuid', error);
+              }
+            });
+          }
         }
       }
     });
@@ -73,7 +104,5 @@ export class StatsLeagueOfLegendsComponent implements OnInit {
       }
     });
   }
-  
-
 
 }

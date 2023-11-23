@@ -1,51 +1,53 @@
 <footer class="footer">
   <div class="footer__container container">
-    
     <div class="container__column">
-        <div class="container__column--image">
-          <a routerLink="">
-            <img src="/src/assets/images/V-Tracker B&N Logo.png" alt="logo" />
-          </a>
-        </div>
+      <div class="container__column--image">
+        <a routerLink="">
+          <img src="/src/assets/images/V-Tracker B&N Logo.png" alt="logo" />
+        </a>
+      </div>
     </div>
 
     <div class="container__column">
-        <h4 class="column__heading" (click)="toggleCompanyList()">Company</h4>
-        <ul class="column__list" *ngIf="isCompanyExpanded">
-            <li class="column__list--item"><a href="#">Partnerships</a></li>
-            <li class="column__list--item"><a href="#">Employment</a></li>
-            <li class="column__list--item"><a href="#">Brand</a></li>
-            <li class="column__list--item"><a href="#">FAQ</a></li>
-        </ul>
+      <h4 class="column__heading" (click)="toggleCompanyList()">Company</h4>
+      <ul class="column__list" *ngIf="isCompanyExpanded">
+        <li class="column__list--item"><a href="#">Partnerships</a></li>
+        <li class="column__list--item"><a href="#">Employment</a></li>
+        <li class="column__list--item"><a href="#">Brand</a></li>
+        <li class="column__list--item"><a href="#">FAQ</a></li>
+      </ul>
     </div>
 
     <div class="container__column">
-        <h4 class="column__heading" (click)="toggleSocialsList()">Socials</h4>
-        <ul class="column__list" *ngIf="isSocialsExpanded">
-            <li class="column__list--item"><a href="#">Facebook</a></li>
-            <li class="column__list--item"><a href="#">Twitter</a></li>
-            <li class="column__list--item"><a href="#">Instagram</a></li>
-            <li class="column__list--item"><a href="#">TikTok</a></li>
-        </ul>
+      <h4 class="column__heading" (click)="toggleSocialsList()">Socials</h4>
+      <ul class="column__list" *ngIf="isSocialsExpanded">
+        <li class="column__list--item"><a href="#">Facebook</a></li>
+        <li class="column__list--item"><a href="#">Twitter</a></li>
+        <li class="column__list--item"><a href="#">Instagram</a></li>
+        <li class="column__list--item"><a href="#">TikTok</a></li>
+      </ul>
     </div>
 
     <div class="container__column">
-        <h4 class="column__heading" (click)="toggleOtherList()">aaaaaaaaa</h4>
-        <ul class="column__list" *ngIf="isOtherExpanded">
-            <li class="column__list--item"><a href="#">bbbbb</a></li>
-            <li class="column__list--item"><a href="#">bbbbb</a></li>
-            <li class="column__list--item"><a href="#">bbbbb</a></li>
-            <li class="column__list--item"><a href="#">bbbbb</a></li>
-        </ul>
+      <h4 class="column__heading" (click)="toggleOtherList()">Legal</h4>
+      <ul class="column__list" *ngIf="isOtherExpanded">
+        <li class="column__list--item"><a href="#">Terms of Service</a></li>
+        <li class="column__list--item"><a href="#">Privacy Policy</a></li>
+        <li class="column__list--item"><a href="#">Cookie Policy</a></li>
+        <li class="column__list--item"><a href="#">Legal Notice</a></li>
+      </ul>
     </div>
   </div>
 
   <div class="footer__copyright">
     <h5>Copyright © 2023 V-Tracker. All rights reserved.</h5>
     <p>
-      V-Tracker is not endorsed by any video game development company and does not reflect the opinions or views of such companies or their official representatives.
-      The names of video games and trademarks mentioned in V-Tracker are the property of their respective companies.
-      V-Tracker is provided as an independent tool for the gaming community and has no official affiliation with the mentioned companies.
+      V-Tracker is not endorsed by any video game development company and does
+      not reflect the opinions or views of such companies or their official
+      representatives. The names of video games and trademarks mentioned in
+      V-Tracker are the property of their respective companies. V-Tracker is
+      provided as an independent tool for the gaming community and has no
+      official affiliation with the mentioned companies.
     </p>
   </div>
 </footer>

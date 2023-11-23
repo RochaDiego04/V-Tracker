@@ -96,7 +96,7 @@ export class GeneralInformationComponent {
 
   showXAxis = true;
   showYAxis = true;
-  gradient = false;
+  gradient = true;
   showLegend = true;
   showXAxisLabel = true;
   xAxisLabel = 'Games';

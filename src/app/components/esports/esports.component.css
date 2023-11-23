@@ -1,0 +1,44 @@
+.main-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 10rem;
+    align-items: flex-start;
+    text-align: center;
+    width: 100%;
+    max-width: 1480px;
+    margin: 5rem auto 5rem auto;
+  }
+  
+  .sub-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .sub-grid-h1 {
+    color: var(--white);
+    font-size: 3rem;
+  }
+
+  .sub-grid-h2 {
+    color: var(--dark-text2);
+    font-size: 2rem;
+  }
+  
+  .sub-grid-img {
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 4/3;
+    height: 200px;
+    object-fit: contain;
+  }
+  
+  
+
+  
+
+  
+
+  

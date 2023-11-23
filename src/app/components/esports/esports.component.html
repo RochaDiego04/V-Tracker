@@ -1,1 +1,11 @@
-<p>esports works!</p>
+
+<div class="main-grid">
+    <div *ngFor="let grid of mainGridData" class="sub-grid">
+      <h1 class="sub-grid-h1">{{ grid.title }}</h1>
+      <div *ngFor="let item of grid.items" class="sub-grid-item">
+        <h2 class="sub-grid-h2">{{item.subtitle}}</h2>
+        <img [src]="item.imageSrc" alt="Imagen" class="sub-grid-img">
+      </div>
+    </div>
+  </div>
+  
