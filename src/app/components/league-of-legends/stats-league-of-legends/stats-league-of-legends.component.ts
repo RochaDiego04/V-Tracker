@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, Subscription, firstValueFrom, take } from 'rxjs';
+import { BehaviorSubject, Observable, firstValueFrom, take } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { LeagueOfLegendsService } from 'src/app/services/league-of-legends.service';
 
@@ -82,6 +82,7 @@ getAccountInfo(): void {
                 }
                 // Update BehaviorSubject with matches information
                 this.matchDataSubject.next(matchDataArray);
+                console.log(this.matchDataSubject);
               },
               error: (error) => {
                 console.error('Error getting the puuid', error);

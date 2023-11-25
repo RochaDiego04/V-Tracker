@@ -14,7 +14,16 @@
     </div>
 
     <div class="kills__matches">
-        <app-chart [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart>
+        <app-chart-kills [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart-kills>
+    </div>
+</div>
+
+<div class="second-section__container container">
+    <div class="roles__matches">
+        <app-chart-roles [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart-roles>
+    </div>
+    <div class="damage__matches">
+        <app-chart-damage [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart-damage>
     </div>
 </div>
 

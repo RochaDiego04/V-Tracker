@@ -17,13 +17,15 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { EmailVerificationComponent } from './components/email-verification/email-verification.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ErrorMessageComponent } from './shared/auth-form/components/error-message/error-message.component';
-import { LeagueOfLegendsComponent } from './components/league-of-legends/league-of-legends.component';
 import { AuthFormComponent } from "./shared/auth-form/auth-form.component";
 import { LoginAdvertisementComponent } from './components/login-advertisement/login-advertisement.component';
 import { GamesBarComponent } from './components/games-bar/games-bar.component';
+
+import { LeagueOfLegendsComponent } from './components/league-of-legends/league-of-legends.component';
 import { StatsLeagueOfLegendsComponent } from './components/league-of-legends/stats-league-of-legends/stats-league-of-legends.component';
 import { LoginLeagueOfLegendsComponent } from './components/league-of-legends/login-league-of-legends/login-league-of-legends.component';
-import { ChartComponent } from './components/league-of-legends/stats-league-of-legends/chart/chart.component';
+import { ChartKillsComponent } from './components/league-of-legends/stats-league-of-legends/chart-kills/chart-kills.component';
+import { ChartRolesComponent } from './components/league-of-legends/stats-league-of-legends/chart-roles/chart-roles.component';
 
 
 /* Firebase */
@@ -43,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 /* Charts */
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartDamageComponent } from './components/league-of-legends/stats-league-of-legends/chart-damage/chart-damage.component';
 
 @NgModule({
     declarations: [
@@ -63,7 +66,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         LeagueOfLegendsComponent,
         StatsLeagueOfLegendsComponent,
         LoginLeagueOfLegendsComponent,
-        ChartComponent
+        ChartKillsComponent,
+        ChartRolesComponent,
+        ChartDamageComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],

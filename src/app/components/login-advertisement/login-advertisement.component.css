@@ -32,6 +32,7 @@
 @media (min-width: 40em) {
     .advertisement__container {
       max-width: 90rem;
+      
     }
 }
 

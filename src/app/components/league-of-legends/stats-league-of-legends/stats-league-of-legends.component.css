@@ -102,3 +102,49 @@
 .logout__button:hover {
   background-color: #aeaeae15;
 }
+
+
+/* ---------2ND SECTION--------- */
+.second-section__container {
+  display: block;
+  background-color: var(--black-bg);
+  padding: 0.8rem;
+  border-radius: 3px;
+}
+
+@media (min-width: 40em) {
+  .second-section__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+}
+
+.roles__matches{
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  background-color: var(--dark-card);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 40em) {
+    .roles__matches {
+        margin: 0;
+    }
+}
+
+.damage__matches {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  background-color: var(--dark-card);
+  border-radius: 5px;
+}
