@@ -26,6 +26,11 @@ import { StatsLeagueOfLegendsComponent } from './components/league-of-legends/st
 import { LoginLeagueOfLegendsComponent } from './components/league-of-legends/login-league-of-legends/login-league-of-legends.component';
 import { ChartKillsComponent } from './components/league-of-legends/stats-league-of-legends/chart-kills/chart-kills.component';
 import { ChartRolesComponent } from './components/league-of-legends/stats-league-of-legends/chart-roles/chart-roles.component';
+import { ChartDamageComponent } from './components/league-of-legends/stats-league-of-legends/chart-damage/chart-damage.component';
+
+import { ValorantComponent } from './components/valorant/valorant.component';
+import { LoginValorantComponent } from './components/valorant/login-valorant/login-valorant.component';
+import { StatsValorantComponent } from './components/valorant/stats-valorant/stats-valorant.component';
 
 
 /* Firebase */
@@ -45,7 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 /* Charts */
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { ChartDamageComponent } from './components/league-of-legends/stats-league-of-legends/chart-damage/chart-damage.component';
+
 
 @NgModule({
     declarations: [
@@ -68,7 +73,10 @@ import { ChartDamageComponent } from './components/league-of-legends/stats-leagu
         LoginLeagueOfLegendsComponent,
         ChartKillsComponent,
         ChartRolesComponent,
-        ChartDamageComponent
+        ChartDamageComponent,
+        ValorantComponent,
+        LoginValorantComponent,
+        StatsValorantComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],

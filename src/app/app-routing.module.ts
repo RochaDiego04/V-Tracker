@@ -16,6 +16,10 @@ import { LoginAdvertisementComponent } from './components/login-advertisement/lo
 import { LoginLeagueOfLegendsComponent } from './components/league-of-legends/login-league-of-legends/login-league-of-legends.component';
 import { StatsLeagueOfLegendsComponent } from './components/league-of-legends/stats-league-of-legends/stats-league-of-legends.component';
 import { leagueOfLegendsGuard } from './shared/guards/league-of-legends.guard';
+import { LoginValorantComponent } from './components/valorant/login-valorant/login-valorant.component';
+import { ValorantComponent } from './components/valorant/valorant.component';
+import { valorantGuard } from './shared/guards/valorant.guard';
+import { StatsValorantComponent } from './components/valorant/stats-valorant/stats-valorant.component';
 
 
 const routes: Routes = [
@@ -26,11 +30,13 @@ const routes: Routes = [
   {path: 'views/esports', component: EsportsComponent},
   {path: 'views/general-information', component: GeneralInformationComponent},
   {path: 'views/about-us', component: AboutUsComponent},
+  
   /* User Paths */
   {path: 'user/log-in', component: LogInComponent, canActivate: [authGuard]},
   {path: 'user/sign-up', component: SignUpComponent, canActivate: [authGuard]},
   {path: 'user/email-verification', component: EmailVerificationComponent},
   {path: 'user/forgot-password', component: ForgotPasswordComponent},
+  
   /* Gaming Paths */
   {path: 'games/login-advertisement', component: LoginAdvertisementComponent, canActivate: [authGuard]},
   {
@@ -47,6 +53,23 @@ const routes: Routes = [
         path: 'stats',
         component: StatsLeagueOfLegendsComponent,
         canActivate: [leagueOfLegendsGuard]
+      }
+    ]
+  },
+  {
+    path: 'games/valorant', 
+    component: ValorantComponent, 
+    canActivate: [onlyLoggedInGuard], //user must be verified
+    children: [
+      {
+        path: 'login',
+        component: LoginValorantComponent,
+        canActivate: [valorantGuard]
+      },
+      {
+        path: 'stats',
+        component: StatsValorantComponent,
+        canActivate: [valorantGuard]
       }
     ]
   } 
