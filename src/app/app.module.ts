@@ -33,7 +33,12 @@ import { LoginValorantComponent } from './components/valorant/login-valorant/log
 import { StatsValorantComponent } from './components/valorant/stats-valorant/stats-valorant.component';
 
 import { TftComponent } from './components/tft/tft.component';
+import { LoginTftComponent } from './components/tft/login-tft/login-tft.component';
+import { StatsTftComponent } from './components/tft/stats-tft/stats-tft.component';
 
+import { FortniteComponent } from './components/fortnite/fortnite.component';
+import { LoginFortniteComponent } from './components/fortnite/login-fortnite/login-fortnite.component';
+import { StatsFortniteComponent } from './components/fortnite/stats-fortnite/stats-fortnite.component';
 
 /* Firebase */
 import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -52,8 +57,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 /* Charts */
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { LoginTftComponent } from './components/tft/login-tft/login-tft.component';
-import { StatsTftComponent } from './components/tft/stats-tft/stats-tft.component';
 
 
 @NgModule({
@@ -83,7 +86,10 @@ import { StatsTftComponent } from './components/tft/stats-tft/stats-tft.componen
         StatsValorantComponent,
         TftComponent,
         LoginTftComponent,
-        StatsTftComponent
+        StatsTftComponent,
+        FortniteComponent,
+        LoginFortniteComponent,
+        StatsFortniteComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],

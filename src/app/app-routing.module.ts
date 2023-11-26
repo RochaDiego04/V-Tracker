@@ -24,6 +24,10 @@ import { TftComponent } from './components/tft/tft.component';
 import { LoginTftComponent } from './components/tft/login-tft/login-tft.component';
 import { StatsTftComponent } from './components/tft/stats-tft/stats-tft.component';
 import { tftGuard } from './shared/guards/tft.guard';
+import { FortniteComponent } from './components/fortnite/fortnite.component';
+import { fortniteGuard } from './shared/guards/fortnite.guard';
+import { LoginFortniteComponent } from './components/fortnite/login-fortnite/login-fortnite.component';
+import { StatsFortniteComponent } from './components/fortnite/stats-fortnite/stats-fortnite.component';
 
 
 const routes: Routes = [
@@ -51,7 +55,7 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginLeagueOfLegendsComponent,
-        canActivate: [leagueOfLegendsGuard]
+        canActivate: [leagueOfLegendsGuard] //user can't go to login if its already logged in
       },
       {
         path: 'stats',
@@ -93,7 +97,24 @@ const routes: Routes = [
         canActivate: [tftGuard]
       }
     ]
-  } 
+  },
+  {
+    path: 'games/fortnite', 
+    component: FortniteComponent, 
+    canActivate: [onlyLoggedInGuard], //user must be verified
+    children: [
+      {
+        path: 'login',
+        component: LoginFortniteComponent,
+        canActivate: [fortniteGuard]
+      },
+      {
+        path: 'stats',
+        component: StatsFortniteComponent,
+        canActivate: [fortniteGuard]
+      }
+    ]
+  }  
 ];
 
 @NgModule({
