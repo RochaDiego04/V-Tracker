@@ -1,4 +1,29 @@
 <p>stats-fortnite works!</p>
-<div class="logout__container">
-    <button class="logout__button" (click)="logout()">Logout</button>
+
+
+<div class="stats__container container">
+    <div class="logout__container">
+        <button class="logout__button" (click)="logout()">Logout</button>
+    </div>
+    <div class="accountInfo__container">
+        <div class="accountInfo__image">
+            <img [src]="(accountInfo | async)?.data.account.image || '/src/assets/images/fortnite-null-avatar.png'" alt="Profile Image">
+        </div>
+        <div class="accountInfo__info">
+            <h2>{{ (accountInfo | async)?.data.account.name }}</h2>
+            <p>Lvl: {{ (accountInfo | async)?.data.battlePass.level }}
+        </div>
+    </div>
+    <div class="overall__container">
+        <!-- Chart 1, chart 2, chart 3... -->
+    </div>
+    <div class="solos__container">
+        <!-- Chart 1, chart 2, chart 3... -->
+    </div>
+    <div class="duos__container">
+        <!-- Chart 1, chart 2, chart 3... -->
+    </div>
+    <div class="squads__container">
+        <!-- Chart 1, chart 2, chart 3... -->
+    </div>
 </div>
