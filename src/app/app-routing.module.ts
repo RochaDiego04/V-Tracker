@@ -15,11 +15,15 @@ import { LeagueOfLegendsComponent } from './components/league-of-legends/league-
 import { LoginAdvertisementComponent } from './components/login-advertisement/login-advertisement.component';
 import { LoginLeagueOfLegendsComponent } from './components/league-of-legends/login-league-of-legends/login-league-of-legends.component';
 import { StatsLeagueOfLegendsComponent } from './components/league-of-legends/stats-league-of-legends/stats-league-of-legends.component';
-import { leagueOfLegendsGuard } from './shared/guards/league-of-legends.guard';
+import { leagueOfLegendsGuard} from './shared/guards/league-of-legends.guard';
 import { LoginValorantComponent } from './components/valorant/login-valorant/login-valorant.component';
 import { ValorantComponent } from './components/valorant/valorant.component';
 import { valorantGuard } from './shared/guards/valorant.guard';
 import { StatsValorantComponent } from './components/valorant/stats-valorant/stats-valorant.component';
+import { TftComponent } from './components/tft/tft.component';
+import { LoginTftComponent } from './components/tft/login-tft/login-tft.component';
+import { StatsTftComponent } from './components/tft/stats-tft/stats-tft.component';
+import { tftGuard } from './shared/guards/tft.guard';
 
 
 const routes: Routes = [
@@ -70,6 +74,23 @@ const routes: Routes = [
         path: 'stats',
         component: StatsValorantComponent,
         canActivate: [valorantGuard]
+      }
+    ]
+  },
+  {
+    path: 'games/tft', 
+    component: TftComponent, 
+    canActivate: [onlyLoggedInGuard], //user must be verified
+    children: [
+      {
+        path: 'login',
+        component: LoginTftComponent,
+        canActivate: [tftGuard]
+      },
+      {
+        path: 'stats',
+        component: StatsTftComponent,
+        canActivate: [tftGuard]
       }
     ]
   } 

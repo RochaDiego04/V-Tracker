@@ -31,7 +31,7 @@ export class LeagueOfLegendsService {
     const docSnap = await getDoc(docRef);
   
     if (docSnap.exists()) {
-      console.log("User data:", docSnap.data());
+      //console.log("User data:", docSnap.data());
       return docSnap.data()['account'];
     } else {
       console.log("No such document!");

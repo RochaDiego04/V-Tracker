@@ -68,3 +68,12 @@
 .game--fortnite:hover {
     background: linear-gradient(to right,  hsla(193, 100%, 51%, 0.435), hsla(214, 87%, 47%, 0.486));
 }
+
+.game--tft {
+    background: linear-gradient(to right,  hsla(302, 100%, 51%, 0.188), hsla(45, 87%, 47%, 0.268));
+}
+
+.game--tft :hover {
+    background: linear-gradient(to right,  hsla(302, 100%, 51%, 0.188), hsla(45, 87%, 47%, 0.51));
+}
+

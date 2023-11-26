@@ -32,6 +32,8 @@ import { ValorantComponent } from './components/valorant/valorant.component';
 import { LoginValorantComponent } from './components/valorant/login-valorant/login-valorant.component';
 import { StatsValorantComponent } from './components/valorant/stats-valorant/stats-valorant.component';
 
+import { TftComponent } from './components/tft/tft.component';
+
 
 /* Firebase */
 import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -50,6 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 /* Charts */
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { LoginTftComponent } from './components/tft/login-tft/login-tft.component';
+import { StatsTftComponent } from './components/tft/stats-tft/stats-tft.component';
 
 
 @NgModule({
@@ -76,7 +80,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         ChartDamageComponent,
         ValorantComponent,
         LoginValorantComponent,
-        StatsValorantComponent
+        StatsValorantComponent,
+        TftComponent,
+        LoginTftComponent,
+        StatsTftComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],
