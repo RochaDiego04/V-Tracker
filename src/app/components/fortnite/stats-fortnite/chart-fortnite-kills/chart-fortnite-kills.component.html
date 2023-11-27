@@ -1,0 +1,30 @@
+<div *ngIf="loading; else chart" class="loading__container">
+  <div class="spinner-box">
+    <div class="leo-border-1">
+      <div class="leo-core-1"></div>
+    </div>
+    <div class="leo-border-2">
+      <div class="leo-core-2"></div>
+    </div>
+  </div>
+  <p class="loading__text">Loading...</p>
+</div>
+
+<ng-template #chart>
+  <h1 class="barchar__title">Kills</h1>
+  <ngx-charts-bar-horizontal
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="barChartData"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    (select)="onSelect($event)"
+    style="fill: var(--dark-text4)">
+  </ngx-charts-bar-horizontal>
+</ng-template>

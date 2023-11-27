@@ -39,6 +39,7 @@ import { StatsTftComponent } from './components/tft/stats-tft/stats-tft.componen
 import { FortniteComponent } from './components/fortnite/fortnite.component';
 import { LoginFortniteComponent } from './components/fortnite/login-fortnite/login-fortnite.component';
 import { StatsFortniteComponent } from './components/fortnite/stats-fortnite/stats-fortnite.component';
+import { ChartFortniteKillsComponent } from './components/fortnite/stats-fortnite/chart-fortnite-kills/chart-kills.component';
 
 /* Firebase */
 import { firebaseApp$, initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -89,7 +90,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         StatsTftComponent,
         FortniteComponent,
         LoginFortniteComponent,
-        StatsFortniteComponent
+        StatsFortniteComponent,
+        ChartFortniteKillsComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],

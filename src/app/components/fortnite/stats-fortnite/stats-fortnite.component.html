@@ -14,16 +14,16 @@
             <p>Lvl: {{ (accountInfo | async)?.data.battlePass.level }}
         </div>
     </div>
-    <div class="overall__container">
+    <div class="chart__container kills__container">
+        <app-chart-fortnite-kills [accountInfo]="accountInfo | async"></app-chart-fortnite-kills>
+    </div>
+    <div class="chart__container solos__container">
         <!-- Chart 1, chart 2, chart 3... -->
     </div>
-    <div class="solos__container">
+    <div class="chart__container duos__container">
         <!-- Chart 1, chart 2, chart 3... -->
     </div>
-    <div class="duos__container">
-        <!-- Chart 1, chart 2, chart 3... -->
-    </div>
-    <div class="squads__container">
+    <div class="chart__container squads__container">
         <!-- Chart 1, chart 2, chart 3... -->
     </div>
 </div>

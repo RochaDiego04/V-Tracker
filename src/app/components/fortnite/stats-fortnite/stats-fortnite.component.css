@@ -5,6 +5,15 @@
   border-radius: 3px;
 }
 
+.chart__container {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 2rem 2rem 4rem;
+  background-color: var(--dark-card);
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
 /* LOGOUT BUTTON */
 @media (min-width: 40em) {
   .logout__container {
@@ -74,10 +83,11 @@
 }
 
 /* OVERALL STATS */
-.overall__container {
-  height: 15rem; /* Change this */
-  background-color: white;
+.kills__container {
+  background-color: var(--dark-card);
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .solos__container {
