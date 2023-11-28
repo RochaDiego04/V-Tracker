@@ -1,26 +1,19 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-chart-fortnite-kills',
-  templateUrl: './chart-fortnite-kills.component.html',
-  styleUrls: ['./chart-fortnite-kills.component.css', '../spinner.css']
+  selector: 'app-chart-fortnite-kd',
+  templateUrl: './chart-fortnite-kd.component.html',
+  styleUrls: ['./chart-fortnite-kd.component.css', '../spinner.css']
 })
-export class ChartFortniteKillsComponent implements OnInit, OnChanges {
+export class ChartFortniteKdComponent implements OnInit, OnChanges {
   @Input() accountInfo: any;
 
   barChartData: any[] = [];
   loading = true;
 
   // options
-  showXAxis = true;
-  showYAxis = true;
-  gradient = true;
+  gradient = false;
   showLegend = true;
-  showXAxisLabel = true;
-  xAxisLabel = 'Game Mode';
-  showYAxisLabel = true;
-  yAxisLabel = 'Kills';
-
   colorScheme = 'air';
 
   ngOnInit(): void {
@@ -46,16 +39,15 @@ export class ChartFortniteKillsComponent implements OnInit, OnChanges {
 
   getKillsAllGameModes() {
     const gameModes = this.accountInfo.data.stats.all;
-  
+
     this.barChartData = Object.keys(gameModes)
       .filter(gameMode => gameModes[gameMode] !== null) // Filtering null gamemode information (trios)
       .map(gameMode => {
         return {
           name: gameMode,
-          value: gameModes[gameMode].kills,
+          value: gameModes[gameMode].kd // 'kd' is the property for Kills/Deaths ratio
         };
       });
     //console.log(this.barChartData);
   }
-  
 }

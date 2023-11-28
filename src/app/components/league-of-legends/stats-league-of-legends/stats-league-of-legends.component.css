@@ -55,8 +55,6 @@
 
 .kills__matches {
   flex: 5;
-  display: flex;
-  justify-content: center;
   padding: 1rem;
 
   background-color: var(--dark-card);
@@ -121,9 +119,6 @@
 
 .roles__matches {
   flex: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 1rem;
 
   background-color: var(--dark-card);
@@ -139,9 +134,6 @@
 
 .damage__matches {
   flex: 6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 1rem;
 
   background-color: var(--dark-card);

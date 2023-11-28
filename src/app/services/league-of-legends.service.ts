@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable, map } from 'rxjs';
 })
 export class LeagueOfLegendsService {
 
-  API_KEY = 'RGAPI-50517f67-e434-4af0-b31e-8ca2884a2886'; 
+  API_KEY = 'RGAPI-4c3c3bf2-e256-4933-90e0-c39df26a7512'; 
   private firestore = getFirestore();
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
 

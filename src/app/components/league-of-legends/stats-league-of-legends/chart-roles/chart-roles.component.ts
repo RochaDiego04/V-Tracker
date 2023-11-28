@@ -13,7 +13,6 @@ export class ChartRolesComponent {
   loading = true;
 
   // options
-  view: [number,number] = [450, 300];
   gradient = false;
   showLegend = true;
   colorScheme = 'nightLights';

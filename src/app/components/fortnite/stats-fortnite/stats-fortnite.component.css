@@ -6,9 +6,8 @@
 }
 
 .chart__container {
-  display: flex;
   gap: 3rem;
-  padding: 2rem 2rem 2rem 4rem;
+  padding: 2rem;
   background-color: var(--dark-card);
   margin-bottom: 1rem;
   border-radius: 5px;
@@ -85,25 +84,39 @@
 /* OVERALL STATS */
 .kills__container {
   background-color: var(--dark-card);
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
+  margin-top: 1rem;
 }
 
-.solos__container {
-  height: 15rem; /* Change this */
-  background-color: white;
-  margin-bottom: 1rem;
+.killsMinMatch__container {
+  background-color: var(--dark-card);
+  margin-top: 1rem;
 }
 
-.duos__container {
-  height: 15rem; /* Change this */
-  background-color: white;
-  margin-bottom: 1rem;
+.flex-bigScreens__container {
+  width: 100%;
+  margin-top: 1rem;
+}  
+
+@media (min-width: 40em) {
+  .flex-bigScreens__container {
+    display: flex;
+    gap: 1rem;
+  }
+  .kd__container {
+    flex: 3;
+    flex-basis: 75%; 
+  }
+
+  .wins__container {
+    flex: 1; 
+    flex-basis: 25%;
+  }
 }
 
-.squads__container {
-  height: 15rem; /* Change this */
-  background-color: white;
-  margin-bottom: 1rem;
+.kd__container {
+  background-color: var(--dark-card);
+}
+
+.wins__container {
+  background-color: var(--dark-card);
 }

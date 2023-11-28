@@ -58,6 +58,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 /* Charts */
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartFortniteKillsMinMatchComponent } from './components/fortnite/stats-fortnite/chart-fortnite-kills-min-match/chart-fortnite-kills-min-match.component';
+import { ChartFortniteKdComponent } from './components/fortnite/stats-fortnite/chart-fortnite-kd/chart-fortnite-kd.component';
+import { ChartFortniteWinsComponent } from './components/fortnite/stats-fortnite/chart-fortnite-wins/chart-fortnite-wins.component';
 
 
 @NgModule({
@@ -91,7 +94,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         FortniteComponent,
         LoginFortniteComponent,
         StatsFortniteComponent,
-        ChartFortniteKillsComponent
+        ChartFortniteKillsComponent,
+        ChartFortniteKillsMinMatchComponent,
+        ChartFortniteKdComponent,
+        ChartFortniteWinsComponent
     ],
     providers: [GoogleAuthProvider],
     bootstrap: [AppComponent],

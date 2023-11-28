@@ -1,26 +1,17 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-chart-fortnite-kills',
-  templateUrl: './chart-fortnite-kills.component.html',
-  styleUrls: ['./chart-fortnite-kills.component.css', '../spinner.css']
+  selector: 'app-chart-fortnite-wins',
+  templateUrl: './chart-fortnite-wins.component.html',
+  styleUrls: ['./chart-fortnite-wins.component.css',  '../spinner.css']
 })
-export class ChartFortniteKillsComponent implements OnInit, OnChanges {
+export class ChartFortniteWinsComponent implements OnInit, OnChanges {
   @Input() accountInfo: any;
 
   barChartData: any[] = [];
   loading = true;
 
   // options
-  showXAxis = true;
-  showYAxis = true;
-  gradient = true;
-  showLegend = true;
-  showXAxisLabel = true;
-  xAxisLabel = 'Game Mode';
-  showYAxisLabel = true;
-  yAxisLabel = 'Kills';
-
   colorScheme = 'air';
 
   ngOnInit(): void {
@@ -39,23 +30,23 @@ export class ChartFortniteKillsComponent implements OnInit, OnChanges {
 
   private loadData() {
     if (this.accountInfo) {
-      this.getKillsAllGameModes();
+      this.getWinsAllGameModes();
       this.loading = false;
     }
   }
 
-  getKillsAllGameModes() {
+  getWinsAllGameModes() {
     const gameModes = this.accountInfo.data.stats.all;
   
     this.barChartData = Object.keys(gameModes)
-      .filter(gameMode => gameModes[gameMode] !== null) // Filtering null gamemode information (trios)
+      .filter(gameMode => gameModes[gameMode] !== null && gameMode !== 'overall') // Filtering null gamemode information (trios) and overall because it would take 50%
       .map(gameMode => {
         return {
           name: gameMode,
-          value: gameModes[gameMode].kills,
+          value: gameModes[gameMode].wins // Assuming 'wins' is the property for wins
         };
       });
-    //console.log(this.barChartData);
+    console.log(this.barChartData);
   }
   
 }

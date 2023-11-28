@@ -12,21 +12,13 @@
 
 <ng-template #chart>
   <div style="width: 100%; height: 500px">
-    <h1 class="barchar__title">Kills</h1>
-    <ngx-charts-bar-horizontal
+    <h1 class="donutChart__title">Wins</h1>
+    <ngx-charts-pie-grid
       [scheme]="colorScheme"
       [results]="barChartData"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
       (select)="onSelect($event)"
       style="fill: var(--dark-text4)"
     >
-    </ngx-charts-bar-horizontal>
+    </ngx-charts-pie-grid>
   </div>
 </ng-template>

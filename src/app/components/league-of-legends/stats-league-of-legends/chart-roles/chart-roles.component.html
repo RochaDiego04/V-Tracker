@@ -1,31 +1,31 @@
 <div *ngIf="puuid && matchesData && matchesData.length > 0">
   <div *ngIf="pieChartData && pieChartData.length > 0">
-    <h1 class="piechart__title">Played Roles</h1>
-    <ngx-charts-pie-chart
-      class="roles__chart"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="pieChartData"
-      [gradient]="gradient"
-      [legend]="showLegend"
-      (select)="onSelect($event)"
-      style="fill: var(--dark-text4)"
-    >
-    ></ngx-charts-pie-chart>
+    <div style="width: 100%; height: 500px">
+      <h1 class="piechart__title">Played Roles</h1>
+      <ngx-charts-pie-chart
+        class="roles__chart"
+        [scheme]="colorScheme"
+        [results]="pieChartData"
+        [gradient]="gradient"
+        [legend]="showLegend"
+        (select)="onSelect($event)"
+        style="fill: var(--dark-text4)"
+      >
+        ></ngx-charts-pie-chart
+      >
+    </div>
   </div>
 </div>
 
-
-  <div class="loading__container" *ngIf="loading">
-    <!-- GRADIENT CIRCLE PLANES -->
-    <div class="spinner-box">
-      <div class="leo-border-1">
-        <div class="leo-core-1"></div>
-      </div>
-      <div class="leo-border-2">
-        <div class="leo-core-2"></div>
-      </div>
+<div class="loading__container" *ngIf="loading">
+  <!-- GRADIENT CIRCLE PLANES -->
+  <div class="spinner-box">
+    <div class="leo-border-1">
+      <div class="leo-core-1"></div>
     </div>
-    <p class="loading__text">Loading...</p>
+    <div class="leo-border-2">
+      <div class="leo-core-2"></div>
+    </div>
   </div>
-  
+  <p class="loading__text">Loading...</p>
+</div>

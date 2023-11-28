@@ -13,7 +13,6 @@ export class ChartDamageComponent {
   loading = true;
 
   // options
-  view: [number,number] = [900, 400];
   showXAxis = true;
   showYAxis = true;
   gradient = false;

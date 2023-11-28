@@ -1,11 +1,11 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-chart-fortnite-kills',
-  templateUrl: './chart-fortnite-kills.component.html',
-  styleUrls: ['./chart-fortnite-kills.component.css', '../spinner.css']
+  selector: 'app-chart-fortnite-kills-min-match',
+  templateUrl: './chart-fortnite-kills-min-match.component.html',
+  styleUrls: ['./chart-fortnite-kills-min-match.component.css',  '../spinner.css']
 })
-export class ChartFortniteKillsComponent implements OnInit, OnChanges {
+export class ChartFortniteKillsMinMatchComponent implements OnInit, OnChanges {
   @Input() accountInfo: any;
 
   barChartData: any[] = [];
@@ -46,16 +46,24 @@ export class ChartFortniteKillsComponent implements OnInit, OnChanges {
 
   getKillsAllGameModes() {
     const gameModes = this.accountInfo.data.stats.all;
-  
+
     this.barChartData = Object.keys(gameModes)
       .filter(gameMode => gameModes[gameMode] !== null) // Filtering null gamemode information (trios)
       .map(gameMode => {
         return {
           name: gameMode,
-          value: gameModes[gameMode].kills,
+          series: [
+            {
+              name: 'KillsPerMatch',
+              value: gameModes[gameMode].killsPerMatch
+            },
+            {
+              name: 'killsPerMin',
+              value: gameModes[gameMode].killsPerMin
+            }
+          ]
         };
       });
     //console.log(this.barChartData);
   }
-  
 }

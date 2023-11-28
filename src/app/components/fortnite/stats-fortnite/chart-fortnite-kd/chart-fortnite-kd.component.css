@@ -1,7 +1,8 @@
-.barchar__title {
+.piechart__title {
     color: var(--white);
     font-size: 3rem;
     padding-left: 1.9rem;
+    margin: 0;
 }
 
 .loading__container {

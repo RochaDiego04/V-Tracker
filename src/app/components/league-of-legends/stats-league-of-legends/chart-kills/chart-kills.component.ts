@@ -14,7 +14,6 @@ export class ChartKillsComponent implements OnInit, OnChanges {
   loading = true;
 
   // options
-  view: [number,number] = [700, 400];
   showXAxis = true;
   showYAxis = true;
   gradient = false;
