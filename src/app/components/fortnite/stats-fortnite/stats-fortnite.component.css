@@ -52,7 +52,7 @@
   padding: 2rem 2rem 2rem 4rem;
   max-width: 63rem;
 
-  height: 15rem; /* Change this */
+  height: 15rem;
   background-color: var(--dark-card);
   margin-bottom: 1rem;
   border-radius: 5px;
@@ -97,19 +97,11 @@
   margin-top: 1rem;
 }  
 
-@media (min-width: 40em) {
+@media (min-width: 120em) {
   .flex-bigScreens__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
     gap: 1rem;
-  }
-  .kd__container {
-    flex: 3;
-    flex-basis: 75%; 
-  }
-
-  .wins__container {
-    flex: 1; 
-    flex-basis: 25%;
   }
 }
 

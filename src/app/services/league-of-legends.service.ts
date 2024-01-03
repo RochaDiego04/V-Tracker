@@ -4,13 +4,14 @@ import { UserData } from '../interfaces/user-data';
 import { setDoc, doc } from "firebase/firestore";
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, map } from 'rxjs';
+import { environmentApi } from '../../environments/environment.api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LeagueOfLegendsService {
 
-  API_KEY = 'RGAPI-4c3c3bf2-e256-4933-90e0-c39df26a7512'; 
+  API_KEY = environmentApi.lolApiKey;
   private firestore = getFirestore();
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
 

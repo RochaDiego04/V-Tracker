@@ -1,75 +1,88 @@
 /* ---------TOP SECTION--------- */
-.top-section__container {
+.stats__container {
   display: block;
   background-color: var(--black-bg);
   padding: 0.8rem;
   border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+.chart__container {
+  gap: 3rem;
+  padding: 2rem;
+  background-color: var(--dark-card);
+  margin-bottom: 1rem;
+  border-radius: 5px;
 }
 
 @media (min-width: 40em) {
-  .top-section__container {
-    display: flex;
-    justify-content: space-between;
+  .stats__container {
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(2,1fr);
     gap: 0.8rem;
+  }
+  .chart__container {
+    margin-bottom: 0;
   }
 }
 
-.account__information {
-  flex: 3;
-
+.accountInfo__container {
   background-color: var(--dark-card);
   display: flex;
   align-items: center;
   gap: 1.5rem;
   padding: 2rem 2rem 2rem 3rem;
   border-radius: 5px;
-  margin: 1rem 0;
 }
 
 @media (min-width: 40em) {
-  .account__information {
-    margin: 0;
+  .accountInfo__container {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
   }
 }
 
-.account__information--photo img {
+.accountInfo__image img {
   max-width: 10rem;
   border-radius: 50%;
   outline: 2px solid var(--white);
 }
 
-.account__information--information {
+.accountInfo__info {
   align-items: center;
 }
 
-.account__information--information h2 {
+.accountInfo__info h2 {
   color: var(--dark-text4);
   margin-bottom: 1rem;
 }
 
-.account__information--information p {
+.accountInfo__info p {
   color: var(--dark-text2);
   margin: 0;
   font-size: 1.4rem;
 }
 
-.kills__matches {
-  flex: 5;
-  padding: 1rem;
+.killsMatches__container {
+  display: block;
+}
 
-  background-color: var(--dark-card);
-  border-radius: 5px;
+@media (min-width: 40em) {
+  .killsMatches__container {
+    grid-column: 4 / 8;
+    grid-row: 1 / 2;
+  }
 }
 
 .logout__container {
-  flex: 1;
-  order: 1;
-  text-align: end;
+  display: block;
 }
 
 @media (min-width: 40em) {
   .logout__container {
-    text-align: center;
+    grid-column: 8 / 9;
+    grid-row: 1 / 2;
   }
 }
 
@@ -101,41 +114,27 @@
   background-color: #aeaeae15;
 }
 
-/* ---------2ND SECTION--------- */
-.second-section__container {
-  display: block;
-  background-color: var(--black-bg);
-  padding: 0.8rem;
-  border-radius: 3px;
-}
-
-@media (min-width: 40em) {
-  .second-section__container {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.8rem;
-  }
-}
-
-.roles__matches {
+.rolesMatches__container {
   flex: 3;
   padding: 1rem;
-
-  background-color: var(--dark-card);
-  border-radius: 5px;
-  margin-bottom: 1rem;
 }
 
 @media (min-width: 40em) {
-  .roles__matches {
-    margin: 0;
+  .rolesMatches__container {
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
   }
 }
 
-.damage__matches {
+.damageMatches__container {
   flex: 6;
   padding: 1rem;
-
-  background-color: var(--dark-card);
-  border-radius: 5px;
 }
+
+@media (min-width: 40em) {
+  .damageMatches__container {
+    grid-column: 5 / 9;
+    grid-row: 2 / 3;
+  }
+}
+

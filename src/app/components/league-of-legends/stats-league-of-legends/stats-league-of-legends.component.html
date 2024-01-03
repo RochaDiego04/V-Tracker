@@ -1,4 +1,4 @@
-<div class="top-section__container container">
+<!-- <div class="top-section__container container">
     <div class="logout__container">
         <button class="logout__button" (click)="logout()">Logout</button>
     </div>
@@ -25,14 +25,40 @@
     <div class="damage__matches">
         <app-chart-damage [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart-damage>
     </div>
+</div> -->
+
+<div class="stats__container container">
+    <div class="logout__container">
+        <button class="logout__button" (click)="logout()">Logout</button>
+    </div>
+    
+    <div class="accountInfo__container">
+        <div class="accountInfo__image">
+            <img [src]="profilePhotoUrl" alt="">
+        </div>
+        <div class="accountInfo__info">
+            <h2>{{ (accountInfo | async)?.name }}</h2>
+            <p>Lvl: {{ (accountInfo | async)?.summonerLevel }}</p>
+        </div>
+    </div>
+
+    <div class="chart__container killsMatches__container">
+        <app-chart-kills [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart-kills>
+    </div>
+
+    <div class="chart__container rolesMatches__container">
+        <app-chart-roles [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart-roles>
+    </div>
+    <div class="chart__container damageMatches__container">
+        <app-chart-damage [puuid]="(accountInfo | async)?.puuid" [matchesData]="(matchData$ | async) || []"></app-chart-damage>
+    </div>
 </div>
 
 
 
 
 
-
-<div *ngIf="accountInfo | async as info">
+<!-- <div *ngIf="accountInfo | async as info">
     <pre>{{ info | json }}</pre>
-</div>
+</div> -->
   

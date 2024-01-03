@@ -8,13 +8,15 @@ import {
 import { UserData } from '../interfaces/user-data';
 import { setDoc, doc } from 'firebase/firestore';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { environmentApi } from '../../environments/environment.api';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class FortniteService {
-  API_KEY = '89222b6d-6a62-445d-878b-f430d87ed54d';
+  API_KEY = environmentApi.fortniteApiKey;
   private firestore = getFirestore();
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
 

@@ -6,5 +6,5 @@ export const environment = {
     apiKey: 'AIzaSyC2PctFpK5rnsBZtk1ZoeqAsOr4JbGO58A',
     authDomain: 'login-firebase-vtracker.firebaseapp.com',
     messagingSenderId: '667489245273',
-  },
+  }
 };
